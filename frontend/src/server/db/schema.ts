@@ -159,10 +159,6 @@ export const movieProductions = createTable(
   },
 );
 
-export const productionsRelations = relations(productions, ({ many }) => ({
-  productionsToMovies: many(movies),
-}));
-
 export const languages = createTable(
   "language",
   {
@@ -181,10 +177,6 @@ export const movieLanguages = createTable(
     languageId: integer("languageId").notNull().references(() => languages.id),
   },
 );
-
-export const languagesRelations = relations(languages, ({ many }) => ({
-  languagesToMovies: many(movies),
-}));
 
 export const genres = createTable(
   "genre",
@@ -205,10 +197,6 @@ export const movieGenres = createTable(
   },
 );
 
-export const genresRelations = relations(genres, ({ many }) => ({
-  genresToMovies: many(movies),
-}));
-
 export const keywords = createTable(
   "keyword",
   {
@@ -228,10 +216,6 @@ export const movieKeywords = createTable(
   },
 );
 
-export const keywordsRelations = relations(keywords, ({ many }) => ({
-  keywordsToMovies: many(movies),
-}));
-
 export const favorites = createTable(
   "favorite",
   {
@@ -241,8 +225,3 @@ export const favorites = createTable(
     movieId: integer("postId").notNull().references(() => movies.id),
   },
 );
-
-export const favoritesRelations = relations(favorites, ({ one }) => ({
-  user: one(users, { fields: [favorites.userId], references: [users.id] }),
-  movie: one(movies, { fields: [favorites.movieId], references: [movies.id] }),
-}));
