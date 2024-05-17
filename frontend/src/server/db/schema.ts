@@ -1,7 +1,7 @@
 import { relations, sql } from "drizzle-orm";
 import {
   index,
-  integer,
+  integer, pgEnum,
   pgTableCreator,
   primaryKey,
   serial,
@@ -10,6 +10,8 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 import { type AdapterAccount } from "next-auth/adapters";
+
+export const mpaaRatingEnum = pgEnum("mpaa_rating", ['G', 'PG', 'PG-13', 'R', 'NC-17']);
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -142,9 +144,12 @@ export const movies = createTable(
     vote_avg: integer("vote_avg"),
     vote_count: integer("vote_count"),
     lang: varchar("lang", { length: 255 }),
-    mpaa_rating: varchar("mpaa_rating", { length: 255 }),
+    mpaa_rating: mpaaRatingEnum("mpaa_rating"),
   },
 );
+
+export type Movie = typeof movies.$inferSelect;
+export type NewMovie = typeof movies.$inferInsert;
 
 export const movieProductions = createTable(
   "movie_production",
@@ -154,6 +159,10 @@ export const movieProductions = createTable(
   },
 );
 
+export const productionsRelations = relations(productions, ({ many }) => ({
+  productionsToMovies: many(movies),
+}));
+
 export const languages = createTable(
   "language",
   {
@@ -161,6 +170,9 @@ export const languages = createTable(
     name: varchar("name", { length: 255 }).notNull(),
   },
 );
+
+export type Language = typeof languages.$inferSelect;
+export type NewLanguage = typeof languages.$inferInsert;
 
 export const movieLanguages = createTable(
   "movie_language",
@@ -170,6 +182,10 @@ export const movieLanguages = createTable(
   },
 );
 
+export const languagesRelations = relations(languages, ({ many }) => ({
+  languagesToMovies: many(movies),
+}));
+
 export const genres = createTable(
   "genre",
   {
@@ -177,6 +193,9 @@ export const genres = createTable(
     name: varchar("name", { length: 255 }).notNull(),
   },
 );
+
+export type Genre = typeof genres.$inferSelect;
+export type NewGenre = typeof genres.$inferInsert;
 
 export const movieGenres = createTable(
   "movie_genre",
@@ -186,6 +205,10 @@ export const movieGenres = createTable(
   },
 );
 
+export const genresRelations = relations(genres, ({ many }) => ({
+  genresToMovies: many(movies),
+}));
+
 export const keywords = createTable(
   "keyword",
   {
@@ -194,6 +217,9 @@ export const keywords = createTable(
   },
 );
 
+export type Keyword = typeof keywords.$inferSelect;
+export type NewKeyword = typeof keywords.$inferInsert;
+
 export const movieKeywords = createTable(
   "movie_keyword",
   {
@@ -201,6 +227,10 @@ export const movieKeywords = createTable(
     keywordId: integer("keywordId").notNull().references(() => keywords.id),
   },
 );
+
+export const keywordsRelations = relations(keywords, ({ many }) => ({
+  keywordsToMovies: many(movies),
+}));
 
 export const favorites = createTable(
   "favorite",
@@ -211,3 +241,8 @@ export const favorites = createTable(
     movieId: integer("postId").notNull().references(() => movies.id),
   },
 );
+
+export const favoritesRelations = relations(favorites, ({ one }) => ({
+  user: one(users, { fields: [favorites.userId], references: [users.id] }),
+  movie: one(movies, { fields: [favorites.movieId], references: [movies.id] }),
+}));
