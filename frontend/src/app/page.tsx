@@ -1,10 +1,43 @@
+'use client'
 import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 import styles from "./index.module.css";
 
 export default function Home() {
+  const session = useSession();
+  const isLoggedIn = !!session.data;
   return (
     <main className={styles.main}>
+      <ul className="flex gap-4">
+        {isLoggedIn && (
+          <>
+          <li>Logged in as {session.data.user.name}</li>
+            <li>
+              <button
+                onClick={() => {
+                  signOut().catch(console.error);
+                }}
+              >
+                Logout
+              </button>
+            </li>
+          </>
+        )}
+
+        {!isLoggedIn && (
+          <li>
+            <button
+       
+              onClick={() => {
+                signIn().catch(console.error);
+              }}
+            >
+              Login
+            </button>
+          </li>
+        )}
+      </ul>
       <div className={styles.container}>
         <h1 className={styles.title}>
           Create <span className={styles.pinkSpan}>T3</span> App
