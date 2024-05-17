@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --background: #233446;
+  --primary: #1E5EFF;
+  --secondary: #08D354;
+  --text: #FFFFFF;
+  --textSecondary: #A0A0A0;
+  --blue: #2B6081
+}
