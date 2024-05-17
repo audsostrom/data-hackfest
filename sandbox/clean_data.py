@@ -1,3 +1,5 @@
+import sys
+
 import pandas as pd
 import ast
 import csv
@@ -102,6 +104,18 @@ def clean_allmovie_vars(raw_df):
 def merge_grouplens(grouplens_folder, interim_df):
     # load grouplens ids from csv, format imdb ids with leading zeros for consistency
     grouplens_ids = pd.read_csv(f"{grouplens_folder}/links.csv")
+    grouplens_userratings = pd.read_csv(f"{grouplens_folder}/ratings.csv")
+    userratings_results = grouplens_userratings.groupby('movieId')['rating'].agg(
+        urate_average='mean',
+        urate_min='min',
+        urate_max='max',
+        urate_median='median',
+        urate_std_dev='std',
+        urate_count='count'
+    ).reset_index()
+    # print(grouplens_ids)
+    grouplens_ids = pd.merge(grouplens_ids, userratings_results, on='movieId', how='outer')
+    # print(grouplens_ids)
     grouplens_ids['imdbId'] = grouplens_ids['imdbId'].apply(lambda x: f"{x:0>{8}}")
     # prefix all columns except 'imdbId' with 'grouplens_' to distinguish them
     grouplens_ids.columns = ["grouplens_" + col if col != "imdbId" else col for col in grouplens_ids.columns]
@@ -133,7 +147,7 @@ def remove_bad(df):
 
         # get columns to blank out based on the prefix
         columns_to_blank = [col for col in df.columns if col.startswith(prefix)]
-        print(f"Columns to blank: {columns_to_blank}")
+        #print(f"Columns to blank: {columns_to_blank}")
 
         # set the specified columns to NaN for rows that meet the condition
         df.loc[mask, columns_to_blank] = np.nan
