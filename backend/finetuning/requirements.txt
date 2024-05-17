@@ -6,3 +6,4 @@ transformers
 tensorflow
 tensorflow_recommenders
 torch
+matplotlib
