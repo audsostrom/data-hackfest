@@ -1,0 +1,6 @@
+
+/.idea
+sandbox/data/grouplens/ml-25m/genome-tags.csv
+sandbox/data/grouplens/ml-25m/genome-scores.csv
+sandbox/data/grouplens/ml-25m/ratings.csv
+sandbox/data/kaggle-asaniczka/TMDB_movie_dataset_v11.csv
