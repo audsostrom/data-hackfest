@@ -4,9 +4,20 @@ import ProfileCard from "~/app/_components/profile-card";
 import Container from "@mui/material/Container";
 import {getServerAuthSession} from "~/server/auth";
 import Box from "@mui/material/Box";
+import {useParams} from "next/navigation";
+import {api} from "~/trpc/server";
+
+async function getData(userId: string) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    const userQuery = api.users.getById.useQuery(userId);
+    return '';
+}
 
 export default async function Account() {
     const session = await getServerAuthSession();
+    const params = useParams<{ id: string; }>()
+
+    const data = await getData(params.id);
 
     const boxStyle = {
         borderRadius: 2,
@@ -21,14 +32,6 @@ export default async function Account() {
         margin: 'auto',
         flex: 1,
     };
-
-    if (!session) {
-        return (
-            <Typography>
-                You must be logged in to view this page
-            </Typography>
-        );
-    }
 
     return (
         <Container maxWidth={"xl"} sx={{
