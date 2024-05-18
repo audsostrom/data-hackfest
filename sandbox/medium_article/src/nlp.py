@@ -49,6 +49,8 @@ for _, i in enumerate(input_string):
     embeddings_list.append(embeddings)
     if _ % 10000  == 0:
         print(str(_))
+        print(f"encoded: {input_string}")
+        print(f"as: {embeddings}")
         
 # extract the embeddings
 embeddings_list_tensors = []

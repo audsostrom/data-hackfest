@@ -6,6 +6,8 @@ import torch.nn as nn
 import numpy as np
 from annoy import AnnoyIndex
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 
 class RecommenderNet(nn.Module):
     def __init__(self, num_users, num_movies, embedding_size):
@@ -46,7 +48,7 @@ class personalisedSearcher:
         embedding_size = 128  # Should match the embedding size used in training
 
         self.recommender = RecommenderNet(num_users, num_movies, embedding_size)
-        self.recommender.load_state_dict(torch.load('CF/CF.pth'))
+        self.recommender.load_state_dict(torch.load('CF/CF.pth', map_location=device))
         self.recommender.eval()  # Set the model to evaluation mode
 
     def get_user_encodings(self):
@@ -88,7 +90,7 @@ class personalisedSearcher:
         query_embeddings = torch.nn.functional.normalize(query_embeddings, p=2, dim=1)
 
         # Query Annoy Index
-        nearest_ids = self.index.get_nns_by_vector(query_embeddings[0].numpy(), 5)  # Find 5 nearest neighbors
+        nearest_ids = self.index.get_nns_by_vector(query_embeddings[0].numpy(), 10)  # Find 5 nearest neighbors
 
         return self.movies.iloc[nearest_ids]
 
