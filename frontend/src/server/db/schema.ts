@@ -144,6 +144,7 @@ export const movies = createTable(
   {
     id: serial("id").primaryKey(),
     title: varchar("title", { length: 255 }).notNull(),
+    genres: text("genres"),
     length: integer("length").notNull(),
     release_dt: timestamp("release_dt", { withTimezone: true }).notNull(),
     synopsis: text("synopsis"),
@@ -159,7 +160,7 @@ export type NewMovie = typeof movies.$inferInsert;
 
 export const movieRelations = relations(movies, ({ many }) => ({
   movieProductions: many(movieProductions),
-  // reviews: many(reviews),
+  reviews: many(reviews),
 }));
 
 export const movieProductions = createTable(

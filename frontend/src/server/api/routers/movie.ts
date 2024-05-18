@@ -26,6 +26,7 @@ export const movieRouter = createTRPCRouter({
               production: true,
             },
           },
+          reviews: true,
         }
       })
     }),
