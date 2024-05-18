@@ -8,3 +8,5 @@ sandbox/data/grouplens/ml-25m/filtered_ratings.csv
 sandbox/embeddings/data.csv
 sandbox/medium_article/CF/CF.pth
 sandbox/medium_article/embeddings/data.csv
+sandbox/embeddings/title_genre.csv
+sandbox/embeddings/tagline_genres_subgenres_themes.csv

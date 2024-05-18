@@ -85,12 +85,20 @@ data['clean_allmovie_themes'] = data['allmovie_themes'].apply(clean_text)
 data['clean_allmovie_synopsis'] = data['allmovie_synopsis'].apply(clean_text)
 data['clean_webeaver_allmovie_themes'] = data['webeaver_allmovie_themes'].apply(clean_list)
 data['clean_webeaver_kaggle_themes'] = data['webeaver_kaggle_themes'].apply(clean_list)
+# data['input_text'] = data['clean_kaggle_tagline'].str.cat([
+#     data['clean_kaggle_genres'],
+#     data['clean_kaggle_keywords'],
+#     data['clean_allmovie_details_genres'],
+#     data['clean_allmovie_details_sub-genres'],
+#     data['clean_allmovie_keywords'],
+#     data['clean_allmovie_themes'],
+#     data['clean_webeaver_allmovie_themes'],
+#     data['clean_webeaver_kaggle_themes']
+# ], sep=' ', na_rep='')
 data['input_text'] = data['clean_kaggle_tagline'].str.cat([
     data['clean_kaggle_genres'],
-    data['clean_kaggle_keywords'],
     data['clean_allmovie_details_genres'],
     data['clean_allmovie_details_sub-genres'],
-    data['clean_allmovie_keywords'],
     data['clean_allmovie_themes'],
     data['clean_webeaver_allmovie_themes'],
     data['clean_webeaver_kaggle_themes']
