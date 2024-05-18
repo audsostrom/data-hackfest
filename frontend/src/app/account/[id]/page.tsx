@@ -8,7 +8,7 @@ import {api} from "~/trpc/react";
 import {useSession} from "next-auth/react";
 import ProfileCard from "~/app/_components/profile-card";
 import {notFound} from "next/navigation";
-import AccountLoading from "~/app/profile/[id]/loading";
+import AccountLoading from "~/app/account/[id]/loading";
 
 interface AccountPageProps {
     params: { id: string };
