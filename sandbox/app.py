@@ -1,14 +1,21 @@
+import io
+import json
+import os
+
+from flask import Flask, jsonify, request
+
+# Import the necessary classes and methods from your recommender system
 import pandas as pd
-import matplotlib.pyplot as plt
-from transformers import AutoTokenizer, AutoModel
 import torch
+from transformers import AutoTokenizer, AutoModel
 import torch.nn as nn
 import numpy as np
 from annoy import AnnoyIndex
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# Flask app initialization
+app = Flask(__name__)
 
-
+# Define the Recommender Network (same as your previous definition)
 class RecommenderNet(nn.Module):
     def __init__(self, num_users, num_movies, embedding_size):
         super(RecommenderNet, self).__init__()
@@ -25,7 +32,7 @@ class RecommenderNet(nn.Module):
         dot = (user_vec * movie_vec).sum(1)
         return torch.sigmoid(dot + user_bias.squeeze() + movie_bias.squeeze())
 
-
+# Define the personalized searcher (same as your previous definition)
 class personalisedSearcher:
     def __init__(self):
         self.movies = pd.read_csv("data/grouplens/ml-25m/movies.csv")
@@ -48,7 +55,7 @@ class personalisedSearcher:
         embedding_size = 128  # Should match the embedding size used in training
 
         self.recommender = RecommenderNet(num_users, num_movies, embedding_size)
-        self.recommender.load_state_dict(torch.load('CF/CF.pth', map_location=device))
+        self.recommender.load_state_dict(torch.load('CF/CF.pth', map_location=torch.device('cpu')))
         self.recommender.eval()  # Set the model to evaluation mode
 
     def get_user_encodings(self):
@@ -149,5 +156,33 @@ class personalisedSearcher:
             print(row.title, ":", row.genres)
 
 
+# Initialize the recommender system
 recommend = personalisedSearcher()
-recommend.print_recs(42, "Horror films with vampires")   # 42, Horror films with zombies
+
+# Define the root route
+@app.route('/', methods=['GET'])
+def root():
+    return jsonify({'msg': 'Try POSTing to the /recommend endpoint with user_id and query'})
+
+# Define the recommendation route
+@app.route('/recommend', methods=['POST'])
+def recommend_movies():
+    if request.method == 'POST':
+        data = request.json
+        user_id = data.get('user_id')
+        query = data.get('query')
+
+        if user_id is not None and query is not None:
+            recommendations, _ = recommend.personalised_search(user_id, query)
+            recommended_movies = recommend.movies[recommend.movies["movieId"].isin(recommendations)]
+            result = recommended_movies[['movieId', 'title', 'genres']].to_dict(orient='records')
+            return jsonify(result)
+        else:
+            return jsonify({'error': 'Please provide user_id and query'}), 400
+
+
+# curl -X POST http://127.0.0.1:5000/recommend -H "Content-Type: application/json" -d "{\"user_id\": 42, \"query\": \"Horror films with zombies\"}"
+
+
+if __name__ == '__main__':
+    app.run()
