@@ -2,9 +2,31 @@ import './home.css';
 import Image from 'next/image';
 import Rows from '../../../public/images/row.jpeg';
 import Profile from '../../../public/images/profile.svg';
-export default function Home() {
+import Question from '../../../public/images/question.svg';
+import Navbar from '../_components/navbar/navbar';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '~/server/auth';
+import { redirect } from 'next/navigation';
+import Link from 'next/link';
+
+
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
+  if (!session) {
+    redirect('/login');
+  }
+
+  /** testing flask */
+  const response = await fetch("http://127.0.0.1:5000/data");
+  const result = await response.json();
+  console.log(result)
+
+
   return (
-    <div className='home-container'>
+    <>
+            <Navbar></Navbar>
+            <div className='home-container'>
       {
 
         /**
@@ -17,9 +39,14 @@ export default function Home() {
         <div className='profile-section'>
           <div className="banner">
           </div>
-          <Image className='logo' src={Profile} alt={'profile'} width='60' height='60'></Image>
-          <div>Audrey Ostrom</div>
-          <div>@audstrom</div>
+          {
+            session.user.image ? <Image className='logo' src={session.user.image} alt={'profile'} width='60' height='60'></Image>
+            : <Image className='logo' src={Profile} alt={'profile'} width='60' height='60'></Image>
+
+          }
+          
+          <div className='all-about-you'>{session.user.name}</div>
+          <div className='username' >{session.user.email}</div>
           <div className='profile-stats'>
             <div className='movies-seen'>
               <div>18</div>
@@ -37,8 +64,8 @@ export default function Home() {
           </div>
         </div>
         <div className='friend-activity'>
-          <div>Friend Activity</div>
-          <ol>
+          <div className='all-about-you'>Friend Activity</div>
+          <ol className='activity-section'>
             <li>Riley watched to Kill a MockingBird</li>
             <li>Riley watched to Kill a MockingBird</li>
             <li>Riley watched to Kill a MockingBird</li>
@@ -47,29 +74,47 @@ export default function Home() {
         </div>
       </div>
       <div className='middle-options'>
-        <div>Find Your Next Movie</div>
-        <div>Are you watching by yourself? &#xf059;</div>
-        <div>Pick for me! &#xf059;</div>
-        <div>Take a quiz &#xf059;</div>
-        <div>Are you watching with a group? &#xf059;</div>
-        <div>Pick for us! &#xf059;</div>
-        <div>Work together on a quiz &#xf059;</div>
+        <div className='middle-title'>Find Your Next Movie</div>
+        <div className='middle-question'>Are you watching by yourself?</div>
+        <div className='question-row'>
+          <Link href='solo-quiz'>
+            <div>Pick for me!</div>
+          
+          </Link>
+          <Image className='question' src={Question} alt={'question'} width='20' height='20'/>
+        </div>
+        <div className='question-row'>
+            <div>Take a quiz</div>
+            <Image className='question' src={Question} alt={'question'} width='20' height='20'/>
+
+        </div>
+        <div className='middle-question'>Are you watching with a group?</div>
+        <div className='question-row'>
+          <div>Pick for us!</div>
+          <Image className='question' src={Question} alt={'question'} width='20' height='20'/>
+        </div>
+        <div className='question-row'>
+          <div>Work together on a quiz</div>
+          <Image className='question' src={Question} alt={'question'} width='20' height='20'/>
+        </div>
       </div>
       <div className='right-side'>
-        <div>All About You</div>
-        <div>You're subscribed to</div>
-        <div>
-          <div>Netflix</div>
-          <div>Netflix</div>
-          <div>Netflix</div>
-          <div>Netflix</div>
+        <div className='all-about-you'>All About You</div>
+        <div className='all-about-you-subheader'>You're subscribed to</div>
+        <div className='streaming'>
+          <div className='streaming-button'>Netflix</div>
+          <div className='streaming-button'>Netflix</div>
+          <div className='streaming-button'>Netflix</div>
+          <div className='streaming-button'>Netflix</div>
         </div>
-        <div>You love these genres</div>
-        <div>Scary, come</div>
+        <div className='all-about-you-subheader'>You love these genres</div>
+        <div>Scary, comedy, drama, romance, cartoons</div>
 
       </div>
 
     </div>
+    
+    </>
   );
 }
 
