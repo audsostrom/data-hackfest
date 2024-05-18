@@ -1,0 +1,6 @@
+
+Using device: cuda
+Starting Epoch 1
+Epoch 1, Batch 0, Loss: 0.6931964159011841
+Epoch 1, Batch 100, Loss: 0.6704785823822021
+Epoch 1, Batch 200, Loss: 0.6317214965820312

@@ -1,0 +1,895 @@
+2024-05-18 01:51:33,678 INFO    StreamThr :8704 [internal.py:wandb_internal():85] W&B internal server running at pid: 8704, started at: 2024-05-18 01:51:33.677551
+2024-05-18 01:51:33,678 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status
+2024-05-18 01:51:33,686 INFO    WriterThread:8704 [datastore.py:open_for_write():87] open: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\run-gmcztqwk.wandb
+2024-05-18 01:51:33,686 DEBUG   SenderThread:8704 [sender.py:send():378] send: header
+2024-05-18 01:51:33,712 DEBUG   SenderThread:8704 [sender.py:send():378] send: run
+2024-05-18 01:51:34,258 INFO    SenderThread:8704 [dir_watcher.py:__init__():211] watching files in: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files
+2024-05-18 01:51:34,259 INFO    SenderThread:8704 [sender.py:_start_run_threads():1123] run started: gmcztqwk with start time 1716022293.67755
+2024-05-18 01:51:34,265 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: check_version
+2024-05-18 01:51:34,265 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: check_version
+2024-05-18 01:51:34,729 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: run_start
+2024-05-18 01:51:34,748 DEBUG   HandlerThread:8704 [system_info.py:__init__():26] System info init
+2024-05-18 01:51:34,748 DEBUG   HandlerThread:8704 [system_info.py:__init__():41] System info init done
+2024-05-18 01:51:34,748 INFO    HandlerThread:8704 [system_monitor.py:start():194] Starting system monitor
+2024-05-18 01:51:34,748 INFO    SystemMonitor:8704 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-05-18 01:51:34,748 INFO    HandlerThread:8704 [system_monitor.py:probe():214] Collecting system info
+2024-05-18 01:51:34,753 INFO    SystemMonitor:8704 [interfaces.py:start():188] Started cpu monitoring
+2024-05-18 01:51:34,753 INFO    SystemMonitor:8704 [interfaces.py:start():188] Started disk monitoring
+2024-05-18 01:51:34,754 INFO    SystemMonitor:8704 [interfaces.py:start():188] Started gpu monitoring
+2024-05-18 01:51:34,761 INFO    SystemMonitor:8704 [interfaces.py:start():188] Started memory monitoring
+2024-05-18 01:51:34,770 INFO    SystemMonitor:8704 [interfaces.py:start():188] Started network monitoring
+2024-05-18 01:51:34,773 DEBUG   HandlerThread:8704 [system_info.py:probe():150] Probing system
+2024-05-18 01:51:34,774 DEBUG   HandlerThread:8704 [system_info.py:_probe_git():135] Probing git
+2024-05-18 01:51:34,818 DEBUG   HandlerThread:8704 [system_info.py:_probe_git():143] Probing git done
+2024-05-18 01:51:34,818 DEBUG   HandlerThread:8704 [system_info.py:probe():198] Probing system done
+2024-05-18 01:51:34,818 DEBUG   HandlerThread:8704 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.11.9', 'heartbeatAt': '2024-05-18T08:51:34.773752', 'startedAt': '2024-05-18T08:51:33.671156', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'D:\\Documents\\Development\\data-hackfest\\sandbox\\train_model.py', 'codePathLocal': 'train_model.py', 'codePath': 'sandbox\\train_model.py', 'git': {'remote': 'https://github.com/audsostrom/data-hackfest.git', 'commit': '2306560f70259d6a7a284a3389138efdd7d7854e'}, 'email': '98769095+davmantor@users.noreply.github.com', 'root': 'D:/Documents/Development/data-hackfest', 'host': 'Desktop-DMTSLUG', 'username': 'dmtsl', 'executable': 'C:\\Users\\dmtsl\\miniconda3\\envs\\2024datahackfest\\python.exe', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 4501.0, 'min': 0.0, 'max': 4501.0}, 'cpu_freq_per_core': [{'current': 4501.0, 'min': 0.0, 'max': 4501.0}], 'disk': {'/': {'total': 1863.0146446228027, 'used': 1669.5401039123535}}, 'gpu': 'NVIDIA GeForce RTX 3060 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Ti', 'memory_total': 8589934592}], 'memory': {'total': 63.18593215942383}}
+2024-05-18 01:51:34,818 INFO    HandlerThread:8704 [system_monitor.py:probe():224] Finished collecting system info
+2024-05-18 01:51:34,818 INFO    HandlerThread:8704 [system_monitor.py:probe():227] Publishing system info
+2024-05-18 01:51:34,818 DEBUG   HandlerThread:8704 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-05-18 01:51:34,820 ERROR   HandlerThread:8704 [system_info.py:_save_conda():221] Error saving conda packages: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\site-packages\wandb\sdk\internal\system\system_info.py", line 214, in _save_conda
+    subprocess.call(
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2024-05-18 01:51:34,821 DEBUG   HandlerThread:8704 [system_info.py:_save_conda():222] Saving conda packages done
+2024-05-18 01:51:34,822 INFO    HandlerThread:8704 [system_monitor.py:probe():229] Finished publishing system info
+2024-05-18 01:51:34,829 DEBUG   SenderThread:8704 [sender.py:send():378] send: files
+2024-05-18 01:51:34,829 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-05-18 01:51:34,934 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: python_packages
+2024-05-18 01:51:34,934 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: python_packages
+2024-05-18 01:51:34,934 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:51:34,935 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:51:35,267 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\requirements.txt
+2024-05-18 01:51:35,267 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\conda-environment.yaml
+2024-05-18 01:51:35,267 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-metadata.json
+2024-05-18 01:51:35,377 DEBUG   SenderThread:8704 [sender.py:send():378] send: telemetry
+2024-05-18 01:51:35,378 DEBUG   SenderThread:8704 [sender.py:send():378] send: telemetry
+2024-05-18 01:51:35,378 DEBUG   SenderThread:8704 [sender.py:send():378] send: run
+2024-05-18 01:51:35,539 INFO    SenderThread:8704 [sender.py:send_run():996] updated run: gmcztqwk
+2024-05-18 01:51:35,556 INFO    wandb-upload_0:8704 [upload_job.py:push():130] Uploaded file C:\Users\dmtsl\AppData\Local\Temp\tmp8n438gh1wandb\9cwehxbi-wandb-metadata.json
+2024-05-18 01:51:36,274 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\config.yaml
+2024-05-18 01:51:36,275 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:51:38,294 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:51:39,574 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:51:44,622 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:51:46,515 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:51:46,515 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:51:46,516 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:51:46,517 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:51:47,367 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:51:48,373 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:51:49,952 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:51:49,952 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:51:50,121 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:51:55,161 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:00,211 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:05,119 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:52:05,120 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:52:05,368 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:06,539 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\config.yaml
+2024-05-18 01:52:10,582 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:15,599 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:20,109 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:52:20,109 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:52:21,408 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:26,447 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:31,480 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:34,787 DEBUG   SystemMonitor:8704 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-05-18 01:52:34,787 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:52:35,143 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:52:35,144 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:52:37,392 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:42,434 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:47,486 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:50,148 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:52:50,148 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:52:50,166 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:52:50,453 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:52:50,453 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:52:50,454 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:52:50,885 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:52:51,887 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:52:53,466 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:52:58,503 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:03,546 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:04,797 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:53:05,157 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:53:05,157 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:53:09,432 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:14,476 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:19,517 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:20,240 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:53:20,240 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:53:25,386 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:30,428 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:34,808 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:53:35,281 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:53:35,281 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:53:35,672 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:40,695 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:45,738 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:50,270 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:53:50,270 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:53:51,612 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:53:53,832 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:53:53,833 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:53:53,833 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:53:53,834 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:53:54,394 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:53:56,406 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:53:56,859 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:01,879 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:04,820 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:54:05,306 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:54:05,306 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:54:07,550 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:12,586 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:17,628 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:20,317 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:54:20,318 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:54:23,565 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:28,599 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:33,637 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:34,824 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:54:35,338 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:54:35,339 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:54:39,503 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:44,550 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:49,586 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:50,415 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:54:50,416 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:54:54,606 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:57,833 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:54:57,833 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:54:57,834 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:54:57,834 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:54:57,968 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:54:59,847 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:54:59,985 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:55:04,831 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:55:05,424 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:55:05,425 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:55:05,604 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:10,650 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:15,692 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:20,535 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:55:20,535 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:55:20,750 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:25,795 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:30,839 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:34,831 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:55:35,542 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:55:35,542 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:55:36,664 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:41,719 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:46,757 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:50,563 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:55:50,563 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:55:52,716 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:55:57,746 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:01,927 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:56:01,928 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:56:01,928 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:56:02,966 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:56:02,966 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:56:02,975 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:03,973 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:56:04,843 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:56:05,573 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:56:05,573 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:56:08,792 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:13,834 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:18,869 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:20,695 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:56:20,696 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:56:23,923 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:28,975 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:34,018 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:34,843 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:56:35,811 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:56:35,811 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:56:39,994 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:45,044 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:50,086 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:56:50,887 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:56:50,887 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:56:55,111 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:00,156 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:04,859 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:57:05,862 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:05,949 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:57:05,949 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:57:06,335 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:57:06,335 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:57:06,335 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:57:06,336 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:57:06,507 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:57:08,517 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:57:11,378 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:16,410 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:19,383 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:57:19,384 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:57:19,384 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:57:19,384 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:57:19,591 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:57:20,949 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:57:20,949 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:57:22,083 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:22,618 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:57:27,122 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:32,161 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:34,871 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:57:35,957 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:57:35,957 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:57:38,133 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:40,501 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:57:40,505 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:57:40,506 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:57:40,507 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:57:40,866 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:57:41,368 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:57:41,368 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:57:41,368 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:57:41,369 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:57:41,877 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:57:41,878 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:57:43,387 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:43,890 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:57:48,429 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:50,971 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:57:50,971 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:57:54,224 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:57:59,264 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:04,300 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:04,876 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:58:05,981 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:58:05,981 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:58:10,189 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:15,222 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:20,253 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:21,079 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:58:21,079 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:58:25,271 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:30,308 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:34,885 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:58:35,892 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:36,091 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:58:36,091 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:58:41,283 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:45,105 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:58:45,106 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:58:45,106 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:58:45,106 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:58:45,340 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:58:46,348 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:58:47,121 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:51,097 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:58:51,097 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:58:52,259 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:58:57,294 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:02,337 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:04,885 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:59:06,177 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:59:06,177 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:59:07,454 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:12,491 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:17,530 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:21,268 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:59:21,269 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:59:23,449 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:28,487 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:33,540 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:34,889 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 01:59:36,307 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:59:36,307 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:59:39,541 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:44,588 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:49,145 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 01:59:49,145 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 01:59:49,145 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 01:59:49,146 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 01:59:49,849 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 01:59:49,850 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 01:59:50,156 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 01:59:51,301 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 01:59:51,301 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 01:59:55,582 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:00,621 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:04,900 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:00:05,909 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:06,305 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:00:06,305 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:00:11,560 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:16,600 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:21,312 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:00:21,312 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:00:21,979 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:27,014 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:32,044 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:34,910 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:00:36,355 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:00:36,355 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:00:37,483 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:42,525 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:47,574 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:51,465 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:00:51,465 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:00:52,625 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:00:53,517 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:00:53,518 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:00:53,518 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:00:53,518 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:00:54,366 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:00:56,377 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:00:58,550 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:03,579 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:04,921 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:01:06,612 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:01:06,612 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:01:08,867 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:13,906 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:18,943 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:21,487 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:01:21,488 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:01:24,713 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:29,739 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:34,780 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:34,932 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:01:36,625 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:01:36,625 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:01:39,872 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:44,921 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:49,951 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:51,625 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:01:51,625 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:01:55,754 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:01:57,408 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:01:57,408 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:01:57,408 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:01:57,409 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:01:58,087 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:01:58,088 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:02:01,444 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:04,945 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:02:06,632 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:02:06,632 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:06,632 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:02:11,893 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:16,925 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:21,637 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:02:21,637 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:02:22,807 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:27,844 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:32,884 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:35,010 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:02:36,645 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:02:36,645 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:02:38,828 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:43,866 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:48,894 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:51,642 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:02:51,642 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:02:54,838 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:02:59,890 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:01,741 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:03:01,741 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:03:01,742 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:03:01,865 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:03:02,547 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:03:04,560 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:03:04,950 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:03:04,951 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:06,721 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:03:06,722 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:03:10,952 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:14,104 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:03:14,104 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:03:14,104 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:03:14,105 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:03:14,640 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:03:16,117 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:16,652 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:03:21,156 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:21,774 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:03:21,775 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:03:26,998 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:32,044 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:34,963 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:03:35,120 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:03:35,124 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:03:35,125 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:03:35,125 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:03:35,790 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:03:35,790 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:03:36,137 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:03:36,138 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:03:36,138 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:03:36,138 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:03:36,800 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:03:36,814 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:03:36,814 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:03:37,809 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:03:38,053 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:43,085 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:48,123 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:51,828 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:03:51,828 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:03:54,089 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:03:59,124 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:04,163 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:04,972 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:04:06,968 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:04:06,968 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:04:09,167 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:14,206 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:19,248 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:21,946 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:04:21,946 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:04:25,211 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:30,244 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:34,976 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:04:35,982 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:36,943 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:04:36,943 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:04:40,484 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:04:40,485 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:04:40,485 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:04:40,485 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:04:41,278 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:04:41,492 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:42,286 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:04:46,523 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:51,559 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:04:52,093 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:04:52,093 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:04:57,361 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:02,393 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:04,983 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:05:07,078 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:05:07,078 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:05:08,223 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:13,274 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:18,317 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:22,097 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:05:22,097 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:05:23,327 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:28,373 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:33,404 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:34,995 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:05:37,126 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:05:37,126 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:05:39,395 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:44,425 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:44,536 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:05:44,536 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:05:44,536 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:05:44,537 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:05:44,761 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:05:45,772 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:05:49,563 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:05:52,223 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:05:52,223 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:05:55,455 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:00,495 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:04,997 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:06:06,005 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:07,302 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:06:07,302 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:06:11,473 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:16,505 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:21,549 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:22,431 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:06:22,431 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:06:26,698 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:31,744 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:35,010 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:06:37,022 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:37,536 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:06:37,536 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:06:42,810 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:47,852 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:48,263 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:06:48,264 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:06:48,264 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:06:48,264 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:06:49,275 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:06:50,284 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:06:52,536 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:06:52,537 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:06:53,768 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:06:58,805 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:03,850 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:05,021 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:07:07,529 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:07:07,529 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:07:09,728 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:14,771 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:19,804 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:22,540 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:07:22,540 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:07:25,764 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:30,806 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:35,035 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:07:36,043 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:37,697 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:07:37,697 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:07:41,870 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:46,904 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:51,943 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:07:52,056 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:07:52,057 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:07:52,057 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:07:52,057 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:07:52,612 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:07:52,612 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:07:52,764 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:07:53,768 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:07:57,790 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:02,834 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:05,036 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:08:07,759 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:08:07,760 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:08:07,954 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:12,994 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:18,035 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:22,753 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:08:22,753 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:08:23,889 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:28,928 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:33,970 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:35,038 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:08:37,761 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:08:37,761 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:08:39,000 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:44,036 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:49,072 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:52,848 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:08:52,849 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:08:55,075 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:08:56,333 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:08:56,333 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:08:56,333 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:08:56,334 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:08:57,292 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:08:58,298 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:09:00,356 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:05,052 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:09:06,065 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:07,845 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:09:07,845 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:09:09,512 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:09:09,512 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:09:09,512 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:09:09,513 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:09:10,390 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:09:10,390 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:09:11,536 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:16,568 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:21,611 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:22,887 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:09:22,887 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:09:27,061 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:30,411 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:09:30,416 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:09:30,416 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:09:30,416 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:09:30,525 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:09:31,272 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:09:31,280 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:09:31,280 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:09:31,281 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:09:31,532 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:09:32,296 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:32,538 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:09:34,549 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:09:35,054 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:09:38,035 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:38,035 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:09:38,035 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:09:43,270 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:48,312 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:53,053 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:09:53,053 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:09:54,212 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:09:59,255 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:04,297 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:05,063 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:10:08,199 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:10:08,199 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:10:09,362 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:14,402 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:19,440 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:23,288 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:10:23,288 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:10:24,492 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:29,531 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:34,563 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:35,065 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:10:35,347 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:10:35,348 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:10:35,348 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:10:35,348 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:10:36,028 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:10:38,037 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:10:38,281 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:10:38,281 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:10:40,509 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:45,539 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:50,581 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:10:53,297 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:10:53,297 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:10:56,479 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:01,521 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:05,071 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:11:07,081 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:08,313 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:11:08,313 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:11:12,617 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:17,653 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:22,698 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:23,323 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:11:23,323 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:11:28,554 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:33,600 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:35,077 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:11:38,331 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:11:38,331 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:11:38,865 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:11:38,865 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:38,865 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:11:38,865 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:11:38,867 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:11:39,487 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:11:40,495 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:11:43,912 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:48,935 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:53,337 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:11:53,337 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:11:54,547 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:11:59,575 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:04,613 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:05,088 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:12:08,338 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:12:08,338 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:12:10,468 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:15,507 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:20,560 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:23,375 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:12:23,376 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:12:25,596 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:30,635 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:35,097 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:12:36,105 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:38,448 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:12:38,448 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:12:41,651 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:42,553 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:12:42,553 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:12:42,553 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:12:42,554 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:12:42,972 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:12:43,983 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:12:47,578 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:52,614 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:12:53,576 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:12:53,577 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:12:57,739 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:02,774 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:05,107 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:13:08,133 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:08,594 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:13:08,594 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:13:13,759 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:18,803 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:23,669 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:13:23,670 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:13:24,801 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:29,850 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:34,888 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:35,451 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:13:38,662 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:13:38,662 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:13:40,867 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:45,905 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:46,442 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:13:46,442 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:13:46,442 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:13:46,443 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:13:47,450 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:13:48,456 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:13:51,482 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:13:53,655 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:13:53,655 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:13:56,794 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:01,810 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:05,133 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:14:07,144 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:08,666 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:14:08,666 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:14:12,834 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:17,862 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:22,894 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:23,691 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:14:23,691 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:14:28,839 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:33,872 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:35,140 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:14:38,772 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:14:38,772 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:14:38,912 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:43,948 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:48,988 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:14:50,331 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:14:50,331 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:14:50,331 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:14:50,659 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:14:50,858 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:14:51,868 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:14:53,771 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:14:53,771 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:14:54,957 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:15:00,007 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:15:03,410 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:15:03,410 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:15:03,410 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:15:03,411 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:15:03,949 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:15:03,950 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:15:05,151 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:15:05,152 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:15:08,829 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:15:08,830 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:15:10,999 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:15:16,027 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:15:21,059 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:15:23,835 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-18 02:15:23,836 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: stop_status
+2024-05-18 02:15:24,042 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:15:24,042 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-18 02:15:24,043 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:15:24,043 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:15:24,043 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:15:24,043 DEBUG   SenderThread:8704 [sender.py:send():378] send: history
+2024-05-18 02:15:24,043 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: summary_record
+2024-05-18 02:15:24,044 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:15:24,044 DEBUG   SenderThread:8704 [sender.py:send():378] send: telemetry
+2024-05-18 02:15:24,044 DEBUG   SenderThread:8704 [sender.py:send():378] send: exit
+2024-05-18 02:15:24,044 INFO    SenderThread:8704 [sender.py:send_exit():585] handling exit code: 0
+2024-05-18 02:15:24,044 INFO    SenderThread:8704 [sender.py:send_exit():587] handling runtime: 1429
+2024-05-18 02:15:24,044 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:15:24,044 INFO    SenderThread:8704 [sender.py:send_exit():593] send defer
+2024-05-18 02:15:24,044 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,044 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 0
+2024-05-18 02:15:24,045 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,045 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-05-18 02:15:24,045 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 1
+2024-05-18 02:15:24,045 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,045 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 1
+2024-05-18 02:15:24,045 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,045 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-05-18 02:15:24,045 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 2
+2024-05-18 02:15:24,045 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,045 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 2
+2024-05-18 02:15:24,045 INFO    HandlerThread:8704 [system_monitor.py:finish():203] Stopping system monitor
+2024-05-18 02:15:24,045 DEBUG   SystemMonitor:8704 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-05-18 02:15:24,053 DEBUG   SystemMonitor:8704 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-05-18 02:15:24,053 INFO    HandlerThread:8704 [interfaces.py:finish():200] Joined cpu monitor
+2024-05-18 02:15:24,053 INFO    HandlerThread:8704 [interfaces.py:finish():200] Joined disk monitor
+2024-05-18 02:15:24,093 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:15:24,111 INFO    HandlerThread:8704 [interfaces.py:finish():200] Joined gpu monitor
+2024-05-18 02:15:24,111 INFO    HandlerThread:8704 [interfaces.py:finish():200] Joined memory monitor
+2024-05-18 02:15:24,111 INFO    HandlerThread:8704 [interfaces.py:finish():200] Joined network monitor
+2024-05-18 02:15:24,112 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,112 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-05-18 02:15:24,112 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 3
+2024-05-18 02:15:24,112 DEBUG   SenderThread:8704 [sender.py:send():378] send: stats
+2024-05-18 02:15:24,112 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,112 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 3
+2024-05-18 02:15:24,112 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,112 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-05-18 02:15:24,112 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 4
+2024-05-18 02:15:24,112 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,112 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 4
+2024-05-18 02:15:24,112 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,112 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-05-18 02:15:24,113 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 5
+2024-05-18 02:15:24,113 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,113 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 5
+2024-05-18 02:15:24,113 DEBUG   SenderThread:8704 [sender.py:send():378] send: summary
+2024-05-18 02:15:24,113 INFO    SenderThread:8704 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-18 02:15:24,113 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,113 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-05-18 02:15:24,113 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 6
+2024-05-18 02:15:24,113 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,113 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 6
+2024-05-18 02:15:24,114 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,114 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-05-18 02:15:24,115 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: status_report
+2024-05-18 02:15:24,230 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 7
+2024-05-18 02:15:24,230 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:24,230 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 7
+2024-05-18 02:15:24,230 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:24,230 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-05-18 02:15:25,053 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-18 02:15:25,098 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:15:25,098 INFO    Thread-16 :8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\config.yaml
+2024-05-18 02:15:25,837 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 8
+2024-05-18 02:15:25,837 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: poll_exit
+2024-05-18 02:15:25,837 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:25,837 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 8
+2024-05-18 02:15:25,838 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:25,838 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-05-18 02:15:25,838 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 9
+2024-05-18 02:15:25,838 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:25,838 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 9
+2024-05-18 02:15:25,838 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:25,838 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-05-18 02:15:25,838 INFO    SenderThread:8704 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-05-18 02:15:26,060 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-18 02:15:26,106 INFO    SenderThread:8704 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:15:26,106 INFO    SenderThread:8704 [dir_watcher.py:finish():388] scan: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files
+2024-05-18 02:15:26,106 INFO    SenderThread:8704 [dir_watcher.py:finish():402] scan save: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\conda-environment.yaml conda-environment.yaml
+2024-05-18 02:15:26,106 INFO    SenderThread:8704 [dir_watcher.py:finish():402] scan save: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\config.yaml config.yaml
+2024-05-18 02:15:26,106 INFO    SenderThread:8704 [dir_watcher.py:finish():402] scan save: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log output.log
+2024-05-18 02:15:26,107 INFO    SenderThread:8704 [dir_watcher.py:finish():402] scan save: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\requirements.txt requirements.txt
+2024-05-18 02:15:26,109 INFO    SenderThread:8704 [dir_watcher.py:finish():402] scan save: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-metadata.json wandb-metadata.json
+2024-05-18 02:15:26,109 INFO    SenderThread:8704 [dir_watcher.py:finish():402] scan save: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json wandb-summary.json
+2024-05-18 02:15:26,111 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 10
+2024-05-18 02:15:26,111 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: poll_exit
+2024-05-18 02:15:26,111 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:26,111 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 10
+2024-05-18 02:15:26,112 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:26,112 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-05-18 02:15:26,112 INFO    SenderThread:8704 [file_pusher.py:finish():169] shutting down file pusher
+2024-05-18 02:15:26,850 INFO    wandb-upload_0:8704 [upload_job.py:push():130] Uploaded file D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\config.yaml
+2024-05-18 02:15:27,023 INFO    wandb-upload_1:8704 [upload_job.py:push():130] Uploaded file D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\output.log
+2024-05-18 02:15:27,024 INFO    wandb-upload_2:8704 [upload_job.py:push():130] Uploaded file D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\requirements.txt
+2024-05-18 02:15:27,063 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-18 02:15:27,063 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: poll_exit
+2024-05-18 02:15:27,125 INFO    wandb-upload_3:8704 [upload_job.py:push():130] Uploaded file D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\files\wandb-summary.json
+2024-05-18 02:15:27,340 INFO    Thread-15 (_thread_body):8704 [sender.py:transition_state():613] send defer: 11
+2024-05-18 02:15:27,340 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:27,340 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 11
+2024-05-18 02:15:27,340 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:27,340 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-05-18 02:15:27,340 INFO    SenderThread:8704 [file_pusher.py:join():175] waiting for file pusher
+2024-05-18 02:15:27,341 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 12
+2024-05-18 02:15:27,341 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:27,341 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 12
+2024-05-18 02:15:27,341 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:27,341 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-05-18 02:15:27,341 INFO    SenderThread:8704 [file_stream.py:finish():601] file stream finish called
+2024-05-18 02:15:27,664 INFO    SenderThread:8704 [file_stream.py:finish():605] file stream finish is done
+2024-05-18 02:15:27,664 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 13
+2024-05-18 02:15:27,665 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:27,665 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 13
+2024-05-18 02:15:27,665 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:27,665 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-05-18 02:15:27,665 INFO    SenderThread:8704 [sender.py:transition_state():613] send defer: 14
+2024-05-18 02:15:27,665 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: defer
+2024-05-18 02:15:27,665 DEBUG   SenderThread:8704 [sender.py:send():378] send: final
+2024-05-18 02:15:27,665 INFO    HandlerThread:8704 [handler.py:handle_request_defer():184] handle defer: 14
+2024-05-18 02:15:27,665 DEBUG   SenderThread:8704 [sender.py:send():378] send: footer
+2024-05-18 02:15:27,665 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: defer
+2024-05-18 02:15:27,665 INFO    SenderThread:8704 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-05-18 02:15:27,666 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-18 02:15:27,666 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: poll_exit
+2024-05-18 02:15:27,666 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: internal_messages
+2024-05-18 02:15:27,666 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: server_info
+2024-05-18 02:15:27,666 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: get_summary
+2024-05-18 02:15:27,667 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: sampled_history
+2024-05-18 02:15:27,667 DEBUG   SenderThread:8704 [sender.py:send_request():405] send_request: server_info
+2024-05-18 02:15:27,750 DEBUG   HandlerThread:8704 [handler.py:handle_request():158] handle_request: shutdown
+2024-05-18 02:15:27,750 INFO    HandlerThread:8704 [handler.py:finish():882] shutting down handler
+2024-05-18 02:15:28,672 INFO    WriterThread:8704 [datastore.py:close():296] close: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_015133-gmcztqwk\run-gmcztqwk.wandb
+2024-05-18 02:15:28,764 INFO    SenderThread:8704 [sender.py:finish():1545] shutting down sender
+2024-05-18 02:15:28,764 INFO    SenderThread:8704 [file_pusher.py:finish():169] shutting down file pusher
+2024-05-18 02:15:28,764 INFO    SenderThread:8704 [file_pusher.py:join():175] waiting for file pusher

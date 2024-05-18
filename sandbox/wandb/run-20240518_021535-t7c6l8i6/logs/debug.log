@@ -1,0 +1,35 @@
+2024-05-18 02:15:35,086 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Current SDK version is 0.17.0
+2024-05-18 02:15:35,086 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Configure stats pid to 19716
+2024-05-18 02:15:35,086 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Loading settings from C:\Users\dmtsl\.config\wandb\settings
+2024-05-18 02:15:35,086 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Loading settings from D:\Documents\Development\data-hackfest\sandbox\wandb\settings
+2024-05-18 02:15:35,086 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': '2024-DataHackfest', 'entity': 'davmantor', 'root_dir': 'D:\\Documents\\Development\\data-hackfest\\sandbox', 'run_id': 't7c6l8i6', 'sweep_param_path': 'D:\\Documents\\Development\\data-hackfest\\sandbox\\wandb\\sweep-73ticu3v\\config-t7c6l8i6.yaml', 'sweep_id': '73ticu3v'}
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'sandbox\\train_model.py', 'program_abspath': 'D:\\Documents\\Development\\data-hackfest\\sandbox\\train_model.py', 'program': 'D:\\Documents\\Development\\data-hackfest\\sandbox\\train_model.py'}
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_init.py:_log_setup():520] Logging user logs to D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_021535-t7c6l8i6\logs\debug.log
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_init.py:_log_setup():521] Logging internal logs to D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240518_021535-t7c6l8i6\logs\debug-internal.log
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():560] calling init triggers
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():567] wandb.init called with sweep_config: {'batch_size': 512, 'embedding_size': 128, 'epochs': 1, 'learning_rate': 0.0016290207119025184}
+config: {}
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():610] starting backend
+2024-05-18 02:15:35,194 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():614] setting up manager
+2024-05-18 02:15:35,198 INFO    Thread-31 (_run_job):19716 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-05-18 02:15:35,199 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():622] backend started and connected
+2024-05-18 02:15:35,266 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_config_callback():1376] config_cb None None {'batch_size': 512, 'embedding_size': 128, 'epochs': 1, 'learning_rate': 0.0016290207119025184}
+2024-05-18 02:15:35,266 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():711] updated telemetry
+2024-05-18 02:15:35,292 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():744] communicating run to backend with 90.0 second timeout
+2024-05-18 02:15:35,853 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_on_init():2396] communicating current version
+2024-05-18 02:15:36,319 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_on_init():2405] got version response 
+2024-05-18 02:15:36,320 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():795] starting run threads in backend
+2024-05-18 02:15:36,529 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_console_start():2374] atexit reg
+2024-05-18 02:15:36,529 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_redirect():2229] redirect: wrap_raw
+2024-05-18 02:15:36,529 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_redirect():2294] Wrapping output streams.
+2024-05-18 02:15:36,529 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_redirect():2319] Redirects installed.
+2024-05-18 02:15:36,530 INFO    Thread-31 (_run_job):19716 [wandb_init.py:init():838] run started, returning control to user process
+2024-05-18 02:21:21,886 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_finish():2103] finishing run davmantor/2024-DataHackfest/t7c6l8i6
+2024-05-18 02:21:21,886 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_atexit_cleanup():2343] got exitcode: 0
+2024-05-18 02:21:21,886 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_restore():2326] restore
+2024-05-18 02:21:21,886 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_restore():2332] restore done
+2024-05-18 02:21:26,333 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-05-18 02:21:26,333 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-05-18 02:21:26,337 INFO    Thread-31 (_run_job):19716 [wandb_run.py:_footer_sync_info():3953] logging synced files

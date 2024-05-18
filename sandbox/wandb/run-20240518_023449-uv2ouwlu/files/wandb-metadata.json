@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.9",
+    "heartbeatAt": "2024-05-18T09:34:50.233140",
+    "startedAt": "2024-05-18T09:34:49.483118",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "D:\\Documents\\Development\\data-hackfest\\sandbox\\train_model.py",
+    "codePathLocal": "train_model.py",
+    "codePath": "sandbox\\train_model.py",
+    "git": {
+        "remote": "https://github.com/audsostrom/data-hackfest.git",
+        "commit": "2306560f70259d6a7a284a3389138efdd7d7854e"
+    },
+    "email": "98769095+davmantor@users.noreply.github.com",
+    "root": "D:/Documents/Development/data-hackfest",
+    "host": "Desktop-DMTSLUG",
+    "username": "dmtsl",
+    "executable": "C:\\Users\\dmtsl\\miniconda3\\envs\\2024datahackfest\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 4501.0,
+        "min": 0.0,
+        "max": 4501.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4501.0,
+            "min": 0.0,
+            "max": 4501.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1863.0146446228027,
+            "used": 1601.4194564819336
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3060 Ti",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 63.18593215942383
+    }
+}

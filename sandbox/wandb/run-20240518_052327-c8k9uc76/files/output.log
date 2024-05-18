@@ -1,0 +1,75 @@
+
+Using device: cuda
+Starting Epoch 1
+Epoch 1, Batch 0, Loss: 0.693199634552002
+Epoch 1, Batch 500, Loss: 0.5894449353218079
+Epoch 1, Batch 1000, Loss: 0.5861042141914368
+Epoch 1, Batch 1500, Loss: 0.5876720547676086
+Epoch 1, Batch 2000, Loss: 0.5923919677734375
+Epoch 1, Batch 2500, Loss: 0.5882970690727234
+Epoch 1, Training Loss: 0.592179683766244
+Epoch 1, Validation Loss: 0.5887126035756306. Epoch Duration: 6.08 minutes
+Starting Epoch 2
+Epoch 2, Batch 0, Loss: 0.5602980256080627
+Epoch 2, Batch 500, Loss: 0.5468757152557373
+Epoch 2, Batch 1000, Loss: 0.5437944531440735
+Epoch 2, Batch 1500, Loss: 0.5475550889968872
+Epoch 2, Batch 2000, Loss: 0.5483899116516113
+Epoch 2, Batch 2500, Loss: 0.5546108484268188
+Epoch 2, Training Loss: 0.5483859686598216
+Epoch 2, Validation Loss: 0.5944820935338426. Epoch Duration: 6.08 minutes
+Starting Epoch 3
+Epoch 3, Batch 0, Loss: 0.5572718381881714
+Epoch 3, Batch 500, Loss: 0.5428899526596069
+Epoch 3, Batch 1000, Loss: 0.5458642840385437
+Epoch 3, Batch 1500, Loss: 0.5422990322113037
+Epoch 3, Batch 2000, Loss: 0.5519382953643799
+Epoch 3, Batch 2500, Loss: 0.5486064553260803
+Epoch 3, Training Loss: 0.5474988633481422
+Epoch 3, Validation Loss: 0.5983276810613058. Epoch Duration: 6.08 minutes
+Starting Epoch 4
+Epoch 4, Batch 0, Loss: 0.5641945600509644
+Epoch 4, Batch 500, Loss: 0.5506486892700195
+Epoch 4, Batch 1000, Loss: 0.5438693165779114
+Epoch 4, Batch 1500, Loss: 0.5441702604293823
+Epoch 4, Batch 2000, Loss: 0.5414498448371887
+Epoch 4, Batch 2500, Loss: 0.5437681078910828
+Epoch 4, Training Loss: 0.546530409557623
+Epoch 4, Validation Loss: 0.5992519113019263. Epoch Duration: 6.08 minutes
+Starting Epoch 5
+Epoch 5, Batch 0, Loss: 0.5629290342330933
+Epoch 5, Batch 500, Loss: 0.5504693984985352
+Epoch 5, Batch 1000, Loss: 0.5493276119232178
+Epoch 5, Batch 1500, Loss: 0.5461605787277222
+Epoch 5, Batch 2000, Loss: 0.5486576557159424
+Epoch 5, Batch 2500, Loss: 0.5395938158035278
+Epoch 5, Training Loss: 0.5447782860800704
+Epoch 5, Validation Loss: 0.6012066260341129. Epoch Duration: 6.08 minutes
+Starting Epoch 6
+Epoch 6, Batch 0, Loss: 0.5627456903457642
+Epoch 6, Batch 500, Loss: 0.5486133098602295
+Epoch 6, Batch 1000, Loss: 0.5490546822547913
+Epoch 6, Batch 1500, Loss: 0.5435896515846252
+Epoch 6, Batch 2000, Loss: 0.5478224754333496
+Epoch 6, Batch 2500, Loss: 0.541996955871582
+Epoch 6, Training Loss: 0.5462658543876724
+Epoch 6, Validation Loss: 0.6024742485330179. Epoch Duration: 6.08 minutes
+Starting Epoch 7
+Epoch 7, Batch 0, Loss: 0.5694668292999268
+Epoch 7, Batch 500, Loss: 0.547813892364502
+Epoch 7, Batch 1000, Loss: 0.5432313680648804
+Epoch 7, Batch 1500, Loss: 0.54212486743927
+Epoch 7, Batch 2000, Loss: 0.5398327112197876
+Epoch 7, Batch 2500, Loss: 0.5471795797348022
+Epoch 7, Training Loss: 0.5462054639618795
+Epoch 7, Validation Loss: 0.6036845990118271. Epoch Duration: 6.08 minutes
+Starting Epoch 8
+Epoch 8, Batch 0, Loss: 0.5579583644866943
+Epoch 8, Batch 500, Loss: 0.549054741859436
+Epoch 8, Batch 1000, Loss: 0.5467384457588196
+Epoch 8, Batch 1500, Loss: 0.5512261390686035
+Epoch 8, Batch 2000, Loss: 0.538627028465271
+Epoch 8, Batch 2500, Loss: 0.5477396249771118
+Epoch 8, Training Loss: 0.5470097392590988
+Epoch 8, Validation Loss: 0.6044857858786533. Epoch Duration: 6.08 minutes
+Total training time (minutes): 48.86 minutes
