@@ -137,14 +137,14 @@ def sweep():
         "method": "random",
         "metric": {"name": "batch_loss", "goal": "minimize"},
         "parameters": {
-            "learning_rate": {"distribution": "log_uniform_values", "min": 0.0001, "max": 0.01},
-            "epochs": {"distribution": "q_uniform", "min": 1, "max": 10, "q": 1},
+            "learning_rate": {"distribution": "log_uniform_values", "min": 0.00025, "max": 0.00050},
+            "epochs": {"distribution": "q_uniform", "min": 5, "max": 10, "q": 1},
             "batch_size": {"values": [512, 1024, 2048, 4096, 8192]},
-            "embedding_size": {"values": [64, 128, 256, 512]}
+            "embedding_size": {"values": [64, 128, 256, 512, 1024]}
         }
     }
     sweep_id = wandb.sweep(sweep_config, project=f"2024-DataHackfest")
-    wandb.agent(sweep_id, function=train, count=10)
+    wandb.agent(sweep_id, function=train, count=5)
 
 
 def run_single_experiment():

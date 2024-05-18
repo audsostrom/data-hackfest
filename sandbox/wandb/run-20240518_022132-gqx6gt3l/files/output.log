@@ -1,0 +1,17 @@
+
+Using device: cuda
+Starting Epoch 1
+Epoch 1, Batch 0, Loss: 0.693221926689148
+Epoch 1, Batch 500, Loss: 0.6806012392044067
+Epoch 1, Batch 1000, Loss: 0.6467609405517578
+Epoch 1, Batch 1500, Loss: 0.6128943562507629
+Epoch 1, Batch 2000, Loss: 0.6060969829559326
+Epoch 1, Batch 2500, Loss: 0.5992939472198486
+Epoch 1, Batch 3000, Loss: 0.5966797471046448
+Epoch 1, Batch 3500, Loss: 0.5894047021865845
+Epoch 1, Batch 4000, Loss: 0.5953159332275391
+Epoch 1, Batch 4500, Loss: 0.5958282947540283
+Epoch 1, Batch 5000, Loss: 0.588301956653595
+Epoch 1, Training Loss: 0.6151657576534361
+Epoch 1, Validation Loss: 0.5887243420813736. Epoch Duration: 5.20 minutes
+Total training time (minutes): 5.42 minutes
