@@ -32,21 +32,59 @@ export default async function Account() {
                     flexDirection: 'column',
                     alignItems: 'center',
                 }}>
-                    <ProfileCard name={session.user.name ?? 'Undefined'} handle={'non-existing'} />
+                    <ProfileCard name={session.user.name ?? 'Undefined'} handle={'non-existing'} image={session.user.image} />
+
+                    <Box sx={{
+                        borderRadius: 2,
+                        overflow: 'hidden',
+                        boxShadow: 3,
+                        bgcolor: 'background.paper',
+                        width: {
+                            xs: '100%',
+                            md: '95%',
+                        },
+                        p: 4
+                    }}>
+                        <Typography component={'h2'} variant={'h5'}>
+                            Friend Requests
+                        </Typography>
+                    </Box>
                 </Grid>
                 <Grid item xs={16} md={6}>
                     <Box sx={{
+                        borderRadius: 2,
+                        overflow: 'hidden',
+                        boxShadow: 3,
                         bgcolor: 'background.paper',
+                        width: {
+                            xs: '100%',
+                            md: '95%',
+                        },
+                        minHeight: 'calc(100vh - 50px)',
+                        p: 4
                     }}>
-                        <Typography>
-                            Account page
+                        <Typography component={'h1'} variant={'h5'}>
+                            Your Profile
                         </Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={16} md={4}>
-                    <Typography>
-                        Friend Requests
-                    </Typography>
+                    <Box sx={{
+                        borderRadius: 2,
+                        overflow: 'hidden',
+                        boxShadow: 3,
+                        bgcolor: 'background.paper',
+                        width: {
+                            xs: '100%',
+                            md: '95%',
+                        },
+                        minHeight: 'calc(100vh - 50px)',
+                        p: 4
+                    }}>
+                        <Typography component={'h2'} variant={'h5'}>
+                            Friend Requests
+                        </Typography>
+                    </Box>
                 </Grid>
             </Grid>
         </Container>

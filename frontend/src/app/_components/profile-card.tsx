@@ -4,9 +4,10 @@ import { Box, Typography, Avatar, Divider, Grid } from '@mui/material';
 export interface ProfileCardProps {
     name: string;
     handle: string;
+    image: string | null | undefined;
 }
 
-export default function ProfileCard({ name, handle }: ProfileCardProps) {
+export default function ProfileCard({ name, handle, image }: ProfileCardProps) {
     return (
         <Box
             sx={{
@@ -16,7 +17,7 @@ export default function ProfileCard({ name, handle }: ProfileCardProps) {
                 bgcolor: 'background.paper',
                 width: {
                     xs: '100%',
-                    md: '90%',
+                    md: '95%',
                 }
             }}
         >
@@ -37,7 +38,9 @@ export default function ProfileCard({ name, handle }: ProfileCardProps) {
                     marginTop: '-50px',
                 }}
             >
-                <Avatar sx={{ width: 92, height: 92, mb: 1, border: '6px solid white' }} />
+                <Avatar sx={{ width: 92, height: 92, mb: 1, border: '6px solid white' }} src={image ?? undefined}>
+                    {name[0]}
+                </Avatar>
                 <Typography variant="h6">{name}</Typography>
                 <Typography variant="body2" color="text.secondary">
                     @{handle}
