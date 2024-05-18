@@ -1,5 +1,6 @@
 import { relations, sql } from "drizzle-orm";
 import {
+  doublePrecision,
   index,
   integer, pgEnum,
   pgTableCreator,
@@ -54,6 +55,7 @@ export const users = createTable("user", {
 
 export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),
+  reviews: many(reviews),
 }));
 
 export const accounts = createTable(
@@ -132,6 +134,10 @@ export const productions = createTable(
     name: varchar("name", { length: 255 }).notNull(),
   }
 );
+export const productionRelations = relations(productions, ({ many }) => ({
+  movieProductions: many(movieProductions),
+}));
+
 
 export const movies = createTable(
   "movie",
@@ -151,6 +157,11 @@ export const movies = createTable(
 export type Movie = typeof movies.$inferSelect;
 export type NewMovie = typeof movies.$inferInsert;
 
+export const movieRelations = relations(movies, ({ many }) => ({
+  movieProductions: many(movieProductions),
+  // reviews: many(reviews),
+}));
+
 export const movieProductions = createTable(
   "movie_production",
   {
@@ -158,6 +169,41 @@ export const movieProductions = createTable(
     productionId: integer("productionId").notNull().references(() => productions.id),
   },
 );
+
+export const movieProductionsRelations = relations(movieProductions, ({ one }) => ( {
+  movie: one(movies, {
+    fields: [movieProductions.movieId],
+    references: [movies.id],
+  }),
+  production: one(productions, {
+    fields: [movieProductions.productionId],
+    references: [productions.id],
+  }),
+}));
+
+export const reviews = createTable(
+  "reviews",
+  {
+    id: serial("id").primaryKey(),
+    userId: varchar("userId", { length: 255 })
+    .notNull()
+    .references(() => users.id),
+    movieId: integer("movieId").notNull().references(() => movies.id), 
+    desc: text("desc"),
+    rating: doublePrecision("rating").notNull(),
+  },
+);
+
+export const reviewsRelations = relations(reviews, ({ one }) => ( {
+  movie: one(movies, {
+    fields: [reviews.movieId],
+    references: [movies.id],
+  }),
+  user: one(users, {
+    fields: [reviews.userId],
+    references: [users.id],
+  }),
+}));
 
 export const languages = createTable(
   "language",

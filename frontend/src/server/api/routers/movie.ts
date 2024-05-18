@@ -6,7 +6,7 @@ import {
   protectedProcedure,
   publicProcedure,
 } from '~/server/api/trpc';
-import { movies } from '~/server/db/schema';
+import { movieProductions, movies } from '~/server/db/schema';
 
 //** movie route */
 export const movieRouter = createTRPCRouter({
@@ -20,6 +20,13 @@ export const movieRouter = createTRPCRouter({
       // https://orm.drizzle.team/docs/rqb
       return ctx.db.query.movies.findFirst({
         where: eq(movies.id, input),
+        with:{
+          movieProductions: {
+            with:{
+              production: true,
+            },
+          },
+        }
       })
     }),
 
