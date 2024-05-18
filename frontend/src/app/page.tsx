@@ -91,5 +91,6 @@ async function CrudShowcase() {
       <p className={styles.showcaseText}> example query of a movie: {aMovie?.title}</p>
     </div>
     
+    
   );
 }
