@@ -1,0 +1,10 @@
+wandb_version: 1
+
+batch_size:
+  value: 512
+embedding_size:
+  value: 64
+epochs:
+  value: 8
+learning_rate:
+  value: 0.0017864113167580622

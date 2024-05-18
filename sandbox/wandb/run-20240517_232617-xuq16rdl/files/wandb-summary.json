@@ -1,0 +1,1 @@
+{"batch_loss": 0.5725178718566895, "epoch": 0, "batch_num": 20500, "_timestamp": 1716013938.7689395, "_runtime": 361.3175563812256, "_step": 44, "training_loss": 0.5838453767676465, "validation_loss": 0.5710328542447906, "epoch_duration": 5.809226433436076, "Total Training Time (minutes)": 6.042211004098257, "_wandb": {"runtime": 360}}

@@ -1,0 +1,1 @@
+{"batch_loss": 0.5472844839096069, "epoch": 2, "batch_num": 9200, "_timestamp": 1716010533.7054682, "_runtime": 604.0380671024323, "_step": 512, "training_loss": 0.5605893224226847, "validation_loss": 0.5694354523333083, "_wandb": {"runtime": 603}}

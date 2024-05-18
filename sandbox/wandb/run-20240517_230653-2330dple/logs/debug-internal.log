@@ -1,0 +1,96 @@
+2024-05-17 23:06:53,197 INFO    StreamThr :28812 [internal.py:wandb_internal():85] W&B internal server running at pid: 28812, started at: 2024-05-17 23:06:53.197112
+2024-05-17 23:06:53,198 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: status
+2024-05-17 23:06:53,204 INFO    WriterThread:28812 [datastore.py:open_for_write():87] open: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\run-2330dple.wandb
+2024-05-17 23:06:53,205 DEBUG   SenderThread:28812 [sender.py:send():378] send: header
+2024-05-17 23:06:53,230 DEBUG   SenderThread:28812 [sender.py:send():378] send: run
+2024-05-17 23:06:53,607 INFO    SenderThread:28812 [dir_watcher.py:__init__():211] watching files in: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files
+2024-05-17 23:06:53,607 INFO    SenderThread:28812 [sender.py:_start_run_threads():1123] run started: 2330dple with start time 1716012413.197112
+2024-05-17 23:06:53,614 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: check_version
+2024-05-17 23:06:53,614 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: check_version
+2024-05-17 23:06:53,908 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: run_start
+2024-05-17 23:06:53,928 DEBUG   HandlerThread:28812 [system_info.py:__init__():26] System info init
+2024-05-17 23:06:53,928 DEBUG   HandlerThread:28812 [system_info.py:__init__():41] System info init done
+2024-05-17 23:06:53,928 INFO    HandlerThread:28812 [system_monitor.py:start():194] Starting system monitor
+2024-05-17 23:06:53,928 INFO    SystemMonitor:28812 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-05-17 23:06:53,928 INFO    HandlerThread:28812 [system_monitor.py:probe():214] Collecting system info
+2024-05-17 23:06:53,933 INFO    SystemMonitor:28812 [interfaces.py:start():188] Started cpu monitoring
+2024-05-17 23:06:53,933 INFO    SystemMonitor:28812 [interfaces.py:start():188] Started disk monitoring
+2024-05-17 23:06:53,934 INFO    SystemMonitor:28812 [interfaces.py:start():188] Started gpu monitoring
+2024-05-17 23:06:53,941 INFO    SystemMonitor:28812 [interfaces.py:start():188] Started memory monitoring
+2024-05-17 23:06:53,950 INFO    SystemMonitor:28812 [interfaces.py:start():188] Started network monitoring
+2024-05-17 23:06:53,953 DEBUG   HandlerThread:28812 [system_info.py:probe():150] Probing system
+2024-05-17 23:06:53,954 DEBUG   HandlerThread:28812 [system_info.py:_probe_git():135] Probing git
+2024-05-17 23:06:53,998 DEBUG   HandlerThread:28812 [system_info.py:_probe_git():143] Probing git done
+2024-05-17 23:06:53,998 DEBUG   HandlerThread:28812 [system_info.py:probe():198] Probing system done
+2024-05-17 23:06:53,998 DEBUG   HandlerThread:28812 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.11.9', 'heartbeatAt': '2024-05-18T06:06:53.953256', 'startedAt': '2024-05-18T06:06:53.190082', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'D:\\Documents\\Development\\data-hackfest\\sandbox\\train_model.py', 'codePathLocal': 'train_model.py', 'codePath': 'sandbox\\train_model.py', 'git': {'remote': 'https://github.com/audsostrom/data-hackfest.git', 'commit': '3e8610ad5b1f6e31895f17f49f0dae18d79114bd'}, 'email': '98769095+davmantor@users.noreply.github.com', 'root': 'D:/Documents/Development/data-hackfest', 'host': 'Desktop-DMTSLUG', 'username': 'dmtsl', 'executable': 'C:\\Users\\dmtsl\\miniconda3\\envs\\2024datahackfest\\python.exe', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 4501.0, 'min': 0.0, 'max': 4501.0}, 'cpu_freq_per_core': [{'current': 4501.0, 'min': 0.0, 'max': 4501.0}], 'disk': {'/': {'total': 1863.0146446228027, 'used': 1603.174015045166}}, 'gpu': 'NVIDIA GeForce RTX 3060 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Ti', 'memory_total': 8589934592}], 'memory': {'total': 63.18593215942383}}
+2024-05-17 23:06:53,998 INFO    HandlerThread:28812 [system_monitor.py:probe():224] Finished collecting system info
+2024-05-17 23:06:53,998 INFO    HandlerThread:28812 [system_monitor.py:probe():227] Publishing system info
+2024-05-17 23:06:53,998 DEBUG   HandlerThread:28812 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-05-17 23:06:54,000 ERROR   HandlerThread:28812 [system_info.py:_save_conda():221] Error saving conda packages: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\site-packages\wandb\sdk\internal\system\system_info.py", line 214, in _save_conda
+    subprocess.call(
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\dmtsl\miniconda3\envs\2024datahackfest\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2024-05-17 23:06:54,002 DEBUG   HandlerThread:28812 [system_info.py:_save_conda():222] Saving conda packages done
+2024-05-17 23:06:54,002 INFO    HandlerThread:28812 [system_monitor.py:probe():229] Finished publishing system info
+2024-05-17 23:06:54,008 DEBUG   SenderThread:28812 [sender.py:send():378] send: files
+2024-05-17 23:06:54,008 INFO    SenderThread:28812 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-05-17 23:06:54,115 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: python_packages
+2024-05-17 23:06:54,115 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: python_packages
+2024-05-17 23:06:54,115 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 23:06:54,116 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 23:06:54,484 DEBUG   SenderThread:28812 [sender.py:send():378] send: telemetry
+2024-05-17 23:06:54,485 DEBUG   SenderThread:28812 [sender.py:send():378] send: telemetry
+2024-05-17 23:06:54,485 DEBUG   SenderThread:28812 [sender.py:send():378] send: run
+2024-05-17 23:06:54,568 INFO    wandb-upload_0:28812 [upload_job.py:push():130] Uploaded file C:\Users\dmtsl\AppData\Local\Temp\tmpukmbcdfewandb\e27mpria-wandb-metadata.json
+2024-05-17 23:06:54,570 INFO    SenderThread:28812 [sender.py:send_run():996] updated run: 2330dple
+2024-05-17 23:06:54,614 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\config.yaml
+2024-05-17 23:06:54,614 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\conda-environment.yaml
+2024-05-17 23:06:54,614 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\wandb-metadata.json
+2024-05-17 23:06:54,614 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\output.log
+2024-05-17 23:06:54,615 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\requirements.txt
+2024-05-17 23:06:56,631 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\output.log
+2024-05-17 23:06:58,611 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 23:07:03,661 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 23:07:06,186 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 23:07:06,186 DEBUG   SenderThread:28812 [sender.py:send():378] send: history
+2024-05-17 23:07:06,186 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 23:07:06,188 INFO    SenderThread:28812 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 23:07:06,746 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\output.log
+2024-05-17 23:07:06,746 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_created():271] file/dir created: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\wandb-summary.json
+2024-05-17 23:07:08,772 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\output.log
+2024-05-17 23:07:09,113 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 23:07:09,113 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 23:07:09,265 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 23:07:12,224 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 23:07:12,224 DEBUG   SenderThread:28812 [sender.py:send():378] send: history
+2024-05-17 23:07:12,224 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 23:07:12,225 INFO    SenderThread:28812 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 23:07:12,805 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\wandb-summary.json
+2024-05-17 23:07:14,822 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\output.log
+2024-05-17 23:07:15,241 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 23:07:18,188 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 23:07:18,189 DEBUG   SenderThread:28812 [sender.py:send():378] send: history
+2024-05-17 23:07:18,189 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 23:07:18,189 INFO    SenderThread:28812 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 23:07:18,854 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\wandb-summary.json
+2024-05-17 23:07:20,880 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\output.log
+2024-05-17 23:07:21,219 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 23:07:24,123 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 23:07:24,123 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 23:07:24,370 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 23:07:24,370 DEBUG   SenderThread:28812 [sender.py:send():378] send: history
+2024-05-17 23:07:24,370 DEBUG   SenderThread:28812 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 23:07:24,371 INFO    SenderThread:28812 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 23:07:24,907 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\wandb-summary.json
+2024-05-17 23:07:26,382 DEBUG   HandlerThread:28812 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 23:07:26,931 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\config.yaml
+2024-05-17 23:07:26,932 INFO    Thread-16 :28812 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\Documents\Development\data-hackfest\sandbox\wandb\run-20240517_230653-2330dple\files\output.log
