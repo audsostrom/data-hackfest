@@ -27,7 +27,7 @@ class RecommenderNet(nn.Module):
 class personalisedSearcher:
     def __init__(self):
         self.movies = pd.read_csv("data/grouplens/ml-25m/movies.csv")
-        self.ratings = pd.read_csv("data/grouplens/ml-25m/filtered_ratings.csv")
+        self.ratings = pd.read_csv("data/grouplens/ml-25m/dummy_ratings.csv")
         self.embeddings = pd.read_csv("embeddings/data.csv", index_col=0)
         self.item_tensor = torch.tensor(self.embeddings.values, dtype=torch.float32)
 
@@ -46,7 +46,12 @@ class personalisedSearcher:
         embedding_size = 128  # Should match the embedding size used in training
 
         self.recommender = RecommenderNet(num_users, num_movies, embedding_size)
-        self.recommender.load_state_dict(torch.load('CF/CF.pth'))
+        current_model_dict = self.recommender.state_dict()
+        loaded_state_dict = torch.load('CF/CF.pth', map_location=torch.device('cpu'))
+        #print(current_model_dict, loaded_state_dict.size())
+        new_state_dict={k:v if v.size()==current_model_dict[k].size()  else  current_model_dict[k] for k,v in zip(current_model_dict.keys(), loaded_state_dict.values())}
+        self.recommender.load_state_dict(new_state_dict, strict=False)
+        #self.recommender.load_state_dict(torch.load('CF/CF.pth', map_location=torch.device('cpu')), strict=False)
         self.recommender.eval()  # Set the model to evaluation mode
 
     def get_user_encodings(self):
@@ -148,4 +153,4 @@ class personalisedSearcher:
 
 
 recommend = personalisedSearcher()
-recommend.print_recs(42, "Horror films with zombies")
+recommend.print_recs(1, "I want to watch a movie that's a blend of comedy and drama, but any movie is good")
