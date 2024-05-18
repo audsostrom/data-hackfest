@@ -23,13 +23,13 @@ interface IProps {
   
 //** example movie selection dropdown */
 export function SelectMovie({movies}: IProps) {
-  const [movieNum, setMovieNum] = useState('');
+  const [movieNum, setMovieNum] = useState("2");
 
   // the useQuery hook allows api calls to contain state
   // check out https://tanstack.com/query/v5/docs/framework/react/guides/queries
   // for the full list of states
   const { data: selectedMovie, isLoading: isGetting } =
-  api.movie.getMovie.useQuery({id: Number(movieNum)})
+  api.movie.byId.useQuery(Number(movieNum))
 
   const handleChange = (event: SelectChangeEvent) => {
     setMovieNum(event.target.value as string);

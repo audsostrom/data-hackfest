@@ -73,9 +73,7 @@ async function CrudShowcase() {
   // example request on the Movie route to get all movies for drop down
   const movies: Movie[] = await api.movie.getAll();
   // gets one movie based off of id
-  const aMovie = await api.movie.getMovie({
-    id: 2
-  });
+  const aMovie = await api.movie.byId(2);
   console.log("this is a movie", aMovie);
 
   return (
