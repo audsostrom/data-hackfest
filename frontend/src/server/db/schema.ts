@@ -206,6 +206,30 @@ export const reviewsRelations = relations(reviews, ({ one }) => ( {
   }),
 }));
 
+export const favorites = createTable(
+  "favorite",
+  {
+    userId: varchar("userId", { length: 255 })
+      .notNull()
+      .references(() => users.id),
+    movieId: integer("movieId").notNull().references(() => movies.id),
+  },
+);
+
+export type Favorite = typeof favorites.$inferSelect;
+export type NewFavorite = typeof favorites.$inferInsert;
+
+export const favoritesRelations = relations(favorites, ({ one }) => ( {
+  movie: one(movies, {
+    fields: [favorites.movieId],
+    references: [movies.id],
+  }),
+  user: one(users, {
+    fields: [favorites.userId],
+    references: [users.id],
+  }),
+}));
+
 export const languages = createTable(
   "language",
   {
@@ -263,12 +287,3 @@ export const movieKeywords = createTable(
   },
 );
 
-export const favorites = createTable(
-  "favorite",
-  {
-    userId: varchar("userId", { length: 255 })
-      .notNull()
-      .references(() => users.id),
-    movieId: integer("postId").notNull().references(() => movies.id),
-  },
-);
