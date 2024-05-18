@@ -57,7 +57,4 @@ export const env = createEnv({
    * `SOME_VAR=''` will throw an error.
    */
   emptyStringAsUndefined: true,
-  images: {
-    domains: ["lh3.googleusercontent.com"],
-  },
 });

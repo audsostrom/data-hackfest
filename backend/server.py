@@ -1,6 +1,7 @@
 # Filename - server.py
  
 # Import flask and datetime module for showing date and time
+import os
 from flask import Flask, jsonify, request
 import google.generativeai as genai
 from flask_cors import CORS
@@ -12,22 +13,20 @@ x = datetime.datetime.now()
 app = Flask(__name__)
 CORS(app)
 
-api_key = 'AIzaSyC8WizRY4zsJsqxpC1S9bUZY25yqoZEuOk'
+api_key = os.getenv('GOOGLE_GENAI_API_KEY')
 genai.configure(api_key=api_key)
  
  
-# Route for seeing a data
+# This is just for me to see if it works lol
 @app.route('/data')
-def get_time():
+def dummy():
     print('hi')
- 
-    # Returning an api for showing in  reactjs
     return {
         'Name':"geek", 
         "Age":"22",
         "Date":x, 
         "programming":"python"
-      }
+    }
 
 
 @app.route("/getmovieinfo", methods=["POST"])
