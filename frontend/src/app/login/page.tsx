@@ -11,9 +11,15 @@ import Container from '@mui/material/Container';
 import {useEffect} from "react";
 import {getServerAuthSession} from "~/server/auth";
 import GoogleButton from "~/app/_components/google-button";
+import {redirect} from "next/navigation";
 
 export default async function Login() {
   const session = await getServerAuthSession();
+
+  if (session) {
+      console.log('session', session);
+      redirect('/account/' + session.user.id);
+  }
 
   console.log(session);
 
