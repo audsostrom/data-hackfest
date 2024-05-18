@@ -4,6 +4,8 @@ import { CreatePost } from "~/app/_components/create-post";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 import styles from "./index.module.css";
+import { SelectMovie } from "./_components/select-movie";
+import { Movie } from "~/server/db/schema";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -68,6 +70,13 @@ async function CrudShowcase() {
   if (!session?.user) return null;
 
   const latestPost = await api.post.getLatest();
+  // example request on the Movie route to get all movies for drop down
+  const movies: Movie[] = await api.movie.getAll();
+  // gets one movie based off of id
+  const aMovie = await api.movie.getMovie({
+    id: 2
+  });
+  console.log("this is a movie", aMovie);
 
   return (
     <div className={styles.showcaseContainer}>
@@ -80,6 +89,9 @@ async function CrudShowcase() {
       )}
 
       <CreatePost />
+      <SelectMovie movies={movies} />
+      <p className={styles.showcaseText}> example query of a movie: {aMovie?.title}</p>
     </div>
+    
   );
 }
