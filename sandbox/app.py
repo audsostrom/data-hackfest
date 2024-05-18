@@ -4,7 +4,7 @@ import os
 
 from flask import Flask, jsonify, request
 
-# Import the necessary classes and methods from your recommender system
+# Import the necessary classes and methods
 import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModel
@@ -15,7 +15,8 @@ from annoy import AnnoyIndex
 # Flask app initialization
 app = Flask(__name__)
 
-# Define the Recommender Network (same as your previous definition)
+
+# Define the Recommender Network
 class RecommenderNet(nn.Module):
     def __init__(self, num_users, num_movies, embedding_size):
         super(RecommenderNet, self).__init__()
@@ -33,7 +34,7 @@ class RecommenderNet(nn.Module):
         return torch.sigmoid(dot + user_bias.squeeze() + movie_bias.squeeze())
 
 
-# Define the personalized searcher (same as your previous definition)
+# Define the personalized searcher
 class personalisedSearcher:
     def __init__(self):
         self.movies = pd.read_csv("data/grouplens/ml-25m/movies.csv")
