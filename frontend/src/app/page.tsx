@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 import styles from "./index.module.css";
+import { SelectMovie } from "./_components/select-movie";
+import { Movie } from "~/server/db/schema";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -57,5 +59,35 @@ export default async function Home() {
         </div>
       </div>
     </main>
+  );
+}
+
+async function CrudShowcase() {
+  const session = await getServerAuthSession();
+  if (!session?.user) return null;
+
+  const latestPost = await api.post.getLatest();
+  // example request on the Movie route to get all movies for drop down
+  const movies: Movie[] = await api.movie.getAll();
+  // gets one movie based off of id
+  const aMovie = await api.movie.byId(2);
+  console.log("this is a movie", aMovie);
+
+  return (
+    <div className={styles.showcaseContainer}>
+      {latestPost ? (
+        <p className={styles.showcaseText}>
+          Your most recent post: {latestPost.name}
+        </p>
+      ) : (
+        <p className={styles.showcaseText}>You have no posts yet.</p>
+      )}
+
+      <CreatePost />
+      <SelectMovie movies={movies} />
+      <p className={styles.showcaseText}> example query of a movie: {aMovie?.title}</p>
+    </div>
+    
+    
   );
 }
