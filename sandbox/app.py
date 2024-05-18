@@ -32,6 +32,7 @@ class RecommenderNet(nn.Module):
         dot = (user_vec * movie_vec).sum(1)
         return torch.sigmoid(dot + user_bias.squeeze() + movie_bias.squeeze())
 
+
 # Define the personalized searcher (same as your previous definition)
 class personalisedSearcher:
     def __init__(self):
