@@ -1,5 +1,5 @@
 'use client';
-import {DM_Sans} from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 
 const dmSans = DM_Sans({
@@ -7,6 +7,7 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
 });
+
 
 const theme = createTheme({
   typography: {

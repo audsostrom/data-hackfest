@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { CreatePost } from "~/app/_components/create-post";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 import styles from "./index.module.css";
@@ -58,8 +57,6 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-
-        <CrudShowcase />
       </div>
     </main>
   );
