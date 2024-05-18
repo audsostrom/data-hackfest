@@ -1,7 +1,12 @@
 import React from 'react';
 import { Box, Typography, Avatar, Divider, Grid } from '@mui/material';
 
-export default function ProfileCard() {
+export interface ProfileCardProps {
+    name: string;
+    handle: string;
+}
+
+export default function ProfileCard({ name, handle }: ProfileCardProps) {
     return (
         <Box
             sx={{
@@ -33,9 +38,9 @@ export default function ProfileCard() {
                 }}
             >
                 <Avatar sx={{ width: 92, height: 92, mb: 1, border: '6px solid white' }} />
-                <Typography variant="h6">Audrey Something</Typography>
+                <Typography variant="h6">{name}</Typography>
                 <Typography variant="body2" color="text.secondary">
-                    @audreysomething
+                    @{handle}
                 </Typography>
             </Box>
             <Grid container columns={13} justifyContent={'space-between'} sx={{
