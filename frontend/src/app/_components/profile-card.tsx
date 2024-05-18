@@ -1,13 +1,14 @@
+'use client';
+
 import React from 'react';
 import { Box, Typography, Avatar, Divider, Grid } from '@mui/material';
+import {Users} from "~/server/db/schema";
 
 export interface ProfileCardProps {
-    name: string;
-    handle: string;
-    image: string | null | undefined;
+  account: Users;
 }
 
-export default function ProfileCard({ name, handle, image }: ProfileCardProps) {
+export default function ProfileCard({ account }: ProfileCardProps) {
     return (
         <Box
             sx={{
@@ -38,12 +39,10 @@ export default function ProfileCard({ name, handle, image }: ProfileCardProps) {
                     marginTop: '-50px',
                 }}
             >
-                <Avatar sx={{ width: 92, height: 92, mb: 1, border: '6px solid white' }} src={image ?? undefined}>
-                    {name[0]}
-                </Avatar>
-                <Typography variant="h6">{name}</Typography>
+                <Avatar sx={{ width: 92, height: 92, mb: 1, border: '6px solid white' }} src={account?.image ?? undefined} />
+                <Typography variant="h6">{account?.name}</Typography>
                 <Typography variant="body2" color="text.secondary">
-                    @{handle}
+                    @{account?.username}
                 </Typography>
             </Box>
             <Grid container columns={13} justifyContent={'space-between'} sx={{

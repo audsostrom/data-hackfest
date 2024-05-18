@@ -1,23 +1,30 @@
+'use client'
+
 import Typography from "@mui/material/Typography";
 import {Grid} from "@mui/material";
-import ProfileCard from "~/app/_components/profile-card";
 import Container from "@mui/material/Container";
-import {getServerAuthSession} from "~/server/auth";
 import Box from "@mui/material/Box";
-import {useParams} from "next/navigation";
-import {api} from "~/trpc/server";
+import {api} from "~/trpc/react";
+import {useSession} from "next-auth/react";
+import ProfileCard from "~/app/_components/profile-card";
+import {notFound} from "next/navigation";
+import AccountLoading from "~/app/account/[id]/loading";
 
-async function getData(userId: string) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    const userQuery = api.users.getById.useQuery(userId);
-    return '';
+interface AccountPageProps {
+    params: { id: string };
 }
 
-export default async function Account() {
-    const session = await getServerAuthSession();
-    const params = useParams<{ id: string; }>()
+export default function Account({ params }: AccountPageProps) {
+    const { data: session, status } = useSession();
+    const { data: account, isLoading} = api.user.byId.useQuery(params.id);
 
-    const data = await getData(params.id);
+    if (!account){
+        if (!isLoading){
+            return notFound()
+        } else {
+            return <AccountLoading/>
+        }
+    }
 
     const boxStyle = {
         borderRadius: 2,
@@ -34,60 +41,73 @@ export default async function Account() {
     };
 
     return (
-        <Container maxWidth={"xl"} sx={{
-            minHeight: '100vh',
-        }}>
-            <Grid container columns={14} sx={{
-                paddingTop: {
-                    xs: 2,
-                    md: 3,
-                },
-                height: '100vh',
-            }}
-                  spacing={{
-                xs: 3,
-                md: 2,
+      <Container maxWidth={"xl"} sx={{
+          minHeight: '100vh',
+      }}>
+          <Grid container columns={14} sx={{
+              paddingTop: {
+                  xs: 2,
+                  md: 3,
+              },
+              height: '100vh',
+          }}
+                spacing={{
+                    xs: 3,
+                    md: 2,
                 }}
-            >
-                <Grid item xs={16} md={4} sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '1.25rem',
-                }}>
-                    <ProfileCard name={session.user.name ?? 'Undefined'} handle={'non-existing'} image={session.user.image} />
+          >
+              <Grid item xs={16} md={4} sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '1.25rem',
+              }}>
+                  <ProfileCard account={account} />
 
-                    <Box sx={boxStyle}>
-                        <Typography component={'h2'} variant={'h5'}>
-                            Friend&apos;s Activity
-                        </Typography>
-                    </Box>
-                </Grid>
-                <Grid item xs={16} md={6} sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '1.25rem',
-                }}>
-                    <Box sx={boxStyle}>
-                        <Typography component={'h1'} variant={'h5'}>
-                            Your Profile
-                        </Typography>
-                    </Box>
-                </Grid>
-                <Grid item xs={16} md={4} sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '1.25rem',
-                }}>
-                    <Box sx={boxStyle}>
-                        <Typography component={'h2'} variant={'h5'}>
-                            Friend Requests
-                        </Typography>
-                    </Box>
-                </Grid>
-            </Grid>
-        </Container>
+                  <Box sx={boxStyle}>
+                      <Typography component={'h2'} variant={'h5'}>
+                          Friend&apos;s Activity
+                      </Typography>
+                  </Box>
+              </Grid>
+              <Grid item xs={16} md={6} sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '1.25rem',
+              }}>
+                  <Box sx={boxStyle}>
+                      <Typography component={'h1'} variant={'h5'}>
+                          Your Profile
+                      </Typography>
+
+                      <Typography component={'h2'} variant={'h6'} sx={{
+                          fontWeight: 700,
+                      }}>
+                          Favorites
+                      </Typography>
+
+                      <Typography component={'h2'} variant={'h6'} sx={{
+                          fontWeight: 700,
+                      }}>
+                          Recents
+                      </Typography>
+                  </Box>
+              </Grid>
+
+              <Grid item xs={16} md={4} sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '1.25rem',
+              }}>
+                  <Box sx={boxStyle}>
+                      <Typography component={'h2'} variant={'h5'}>
+                          Friend Requests
+                      </Typography>
+                  </Box>
+              </Grid>
+          </Grid>
+      </Container>
     );
 }

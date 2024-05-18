@@ -1,13 +1,13 @@
-import {createTRPCRouter, protectedProcedure} from "~/server/api/trpc";
+import {createTRPCRouter, protectedProcedure, publicProcedure} from "~/server/api/trpc";
 import {z} from "zod";
 import {eq} from "drizzle-orm";
 import {users} from "~/server/db/schema";
 
 export const userRouter = createTRPCRouter({
     // defines purpose, protected = requires login
-    byId: protectedProcedure
+    byId: publicProcedure
         // validates input
-        .input(z.number())
+        .input(z.string())
         // sets up query with context and input
         .query(({ctx, input}) => {
             // drizzle orm select

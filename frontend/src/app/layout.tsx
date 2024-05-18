@@ -20,14 +20,16 @@ export default function RootLayout({
   return (
     <html lang="en">
     <AppRouterCacheProvider>
-      <body>
-      <TRPCReactProvider>
-        <ThemeProvider theme={theme}>
-        {children}
-        </ThemeProvider>
+        <TRPCReactProvider>
+          <SessionProvider>
+            <ThemeProvider theme={theme}>
+              <body className={GeistSans.className}>
+              <CssBaseline />
+              {children}
+              </body>
+            </ThemeProvider>
+          </SessionProvider>
         </TRPCReactProvider>
-
-      </body>
     </AppRouterCacheProvider>
     </html>
   );

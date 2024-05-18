@@ -53,6 +53,9 @@ export const users = createTable("user", {
   image: varchar("image", { length: 255 }),
 });
 
+export type Users = typeof users.$inferSelect;
+export type NewUsers = typeof users.$inferInsert;
+
 export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),
   reviews: many(reviews),
