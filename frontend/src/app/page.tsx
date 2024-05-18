@@ -1,8 +1,9 @@
-'use client'
+'use client';
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 import styles from "./index.module.css";
+import Navbar from "./components/navbar/navbar";
 
 export default function Home() {
   const session = useSession();

@@ -3,36 +3,45 @@
    color: white;
    display: flex;
    justify-content: space-around;
-   height: 100vh;
+   min-height: calc(100vh - 60px);
+   height: 100%;
    align-items: center;
+   flex-wrap: wrap;
 }
 
 .left-side, .middle-options, .right-side {
-   background-color: #233446;
    height: 80vh;
    gap: 30px;
+   margin: 20px 30px;
+   border-radius: 10px;
 }
 
 .left-side {
    display: flex;
+   width: 350px;
    flex-direction: column;
    align-items: center;
 }
 
 .profile-section {
+   background-color: #233446;
    display: flex;
    align-items: center;
    flex-direction: column;
    width: 100%;
+   border-radius: 10px;
 }
 
 .profile-stats {
    display: flex;
    text-align: center;
    gap: 10px;
+   padding-bottom: 30px;
 }
 
 .banner {
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
    width: 100%;
    background-image: url("../../../public/images/row.jpeg");
    height: 150px;
@@ -42,4 +51,92 @@
 
 .logo {
    margin-top: -30px;
+   margin-bottom: 10px;
+}
+
+.username {
+   margin-top: -10px;
+   margin-bottom: 20px
+}
+
+ol {
+   padding: 0;
+   list-style-type: none;
+ }
+
+ li {
+   margin-bottom: 10px;
+ }
+
+
+.friend-activity {
+   width: 100%;
+   background-color: #233446;
+   border-radius: 10px;
+   padding: 20px;
+}
+
+.middle-options {
+   padding: 20px;
+   flex: 1;
+   min-width: 350px;
+   background-color: #233446;
+}
+
+.right-side {
+   padding: 20px;
+   width: 350px;
+   background-color: #233446;
+}
+
+.middle-title {
+   /** font-family: "DM Sans"; */
+   font-size: 30px;
+   font-weight: 700;
+}
+
+.middle-question {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-size: 24px;
+   font-weight: 400;
+}
+
+.question-row {
+   align-items: center;
+   display: flex;
+   gap: 10px;
+   border-radius: 10px;
+   background: #2B6081;
+   padding: 15px;
+   margin: 10px 0px;
+}
+
+.all-about-you {
+
+   font-size: 20px;
+   font-weight: 700;
+   margin-bottom: 20px;
+
+}
+
+.all-about-you-subheader {
+   margin-bottom: 15px;
+   font-size: 16px;
+   font-style: italic;
+   font-weight: 500;
+
+}
+
+.streaming {
+   margin: 20px 0px;
+   display: flex;
+   gap: 10px;
+}
+.streaming-button {
+   border-radius: 10px;
+   background: #08D354;
+   width: 100%;
+   padding: 10px;
+   color: black;
 }

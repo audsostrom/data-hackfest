@@ -1,20 +1,18 @@
-import './home.css';
+import './bucketlist.css';
 import Image from 'next/image';
 import Rows from '../../../public/images/row.jpeg';
 import Profile from '../../../public/images/profile.svg';
 import Question from '../../../public/images/question.svg';
-import Navbar from '../components/navbar/navbar';
-import { useSession } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '~/server/auth';
 import { redirect } from 'next/navigation';
 
 
-export default async function Home() {
+export default async function BucketList() {
   const session = await getServerSession(authOptions);
   console.log(session);
   if (!session) {
-    redirect('/login');
+    redirect('/login')
   }
 
   return (

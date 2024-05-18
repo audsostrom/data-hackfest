@@ -7,6 +7,7 @@ import { GeistSans } from "geist/font/sans";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
 import {ThemeProvider} from "@mui/material";
 import theme from "~/app/theme";
+import Navbar from "./components/navbar/navbar";
 
 
 
@@ -18,11 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
     <AppRouterCacheProvider>
+      <body>
       <SessionProvider>
         <ThemeProvider theme={theme}>
-          <body className={GeistSans.className}>{children}</body>
+        <Navbar></Navbar>
+        {children}
         </ThemeProvider>
       </SessionProvider>
+
+      </body>
     </AppRouterCacheProvider>
     </html>
   );
