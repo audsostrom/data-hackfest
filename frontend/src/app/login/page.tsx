@@ -21,8 +21,6 @@ export default async function Login() {
       redirect('/account/' + session.user.id);
   }
 
-  console.log(session);
-
   return (
     <Container component="main" maxWidth="xs" sx={{
       bgcolor: 'background.paper',
