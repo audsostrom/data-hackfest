@@ -7,6 +7,7 @@ import Logo from '../../../../public/images/logo.svg';
 import Home from '../../../../public/images/home.svg';
 import Friends from '../../../../public/images/people.svg';
 import Bucket from '../../../../public/images/bucket.svg';
+import SearchBar from "../search-bar";
 import './navbar.css'
 
 
@@ -28,6 +29,8 @@ const Navbar = async () => {
             <Link style={{ marginLeft: 'auto', justifySelf: 'flex-end'}} href="/home" passHref>
               <Image className='home-logo' style={{ marginLeft: 'auto', justifySelf: 'flex-end'}} src={Home} alt={'profile'} width='30' height='30'></Image>
               </Link>
+
+            <SearchBar />
             <Link href="/bucketlist" passHref>
               <Image className='navbar-logo' src={Bucket} alt={'profile'} width='30' height='30'></Image>
               </Link>

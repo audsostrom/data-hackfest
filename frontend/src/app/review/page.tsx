@@ -1,4 +1,4 @@
-import './profile.css';
+import './review.css';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
@@ -18,7 +18,7 @@ export default async function Profile() {
    <>
    <Navbar></Navbar>
        <div className='profile-container'>
-      Profile
+     
     </div>
    </>
 
