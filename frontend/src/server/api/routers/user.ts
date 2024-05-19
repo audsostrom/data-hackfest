@@ -14,10 +14,17 @@ export const userRouter = createTRPCRouter({
             // https://orm.drizzle.team/docs/rqb
             return ctx.db.query.users.findFirst({
                 where: eq(users.id, input),
+              with: {
+                  favorites: {
+                    with: {
+                      movie: true,
+                    },
+                  },
+              }
             })
         }),
 
-    getAll: protectedProcedure.query(({ctx}) => {
+    getAll: publicProcedure.query(({ctx}) => {
         return ctx.db.query.users.findMany();
     }),
 });

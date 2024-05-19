@@ -59,6 +59,7 @@ export type NewUsers = typeof users.$inferInsert;
 export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),
   reviews: many(reviews),
+  favorites: many(favorites),
 }));
 
 export const accounts = createTable(
