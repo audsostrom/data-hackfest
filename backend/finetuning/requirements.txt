@@ -1,9 +1,0 @@
-flask
-python-dotenv
-flask-cors
-pandas
-transformers
-tensorflow
-tensorflow_recommenders
-torch
-matplotlib
