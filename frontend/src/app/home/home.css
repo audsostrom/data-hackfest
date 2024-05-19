@@ -141,3 +141,12 @@ ol {
    padding: 10px;
    color: black;
 }
+
+.bottom-right-side {
+   padding: 20px;
+   width: 350px;
+   background-color: #233446;
+   gap: 30px;
+   /* margin: 20px 30px; */
+   border-radius: 10px;
+}

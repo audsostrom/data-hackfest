@@ -31,11 +31,14 @@ const Navbar = () => {
                 
               </div>
               </Link>
-            <Link style={{ marginLeft: 'auto', justifySelf: 'flex-end'}} href="/home" passHref>
-              <Image className='home-logo' style={{ marginLeft: 'auto', justifySelf: 'flex-end'}} src={Home} alt={'profile'} width='30' height='30'></Image>
-              </Link>
 
-            <SearchBar />
+            <div style={{ marginLeft: 'auto', justifySelf: 'flex-end'}} >
+            <SearchBar/>
+
+            </div>
+            <Link href="/home" passHref>
+              <Image className='home-logo' src={Home} alt={'profile'} width='30' height='30'></Image>
+              </Link>
             <Link href="/bucketlist" passHref>
               <Image className='navbar-logo' src={Bucket} alt={'profile'} width='30' height='30'></Image>
               </Link>
