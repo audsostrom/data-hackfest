@@ -1,5 +1,7 @@
+'use client';
+
 // components/Navbar.js
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,10 +11,13 @@ import Friends from '../../../../public/images/people.svg';
 import Bucket from '../../../../public/images/bucket.svg';
 import SearchBar from "../search-bar";
 import './navbar.css'
+import {useSession} from "next-auth/react";
 
 
-const Navbar = async () => {
-  return (
+const Navbar = () => {
+    const { data: session, status } = useSession();
+
+    return (
     <AppBar position="static">
       <Toolbar>
           <Box sx={{ display: 'flex', flexGrow: 1, gap: 3, alignItems: 'center', height: 60}}>
@@ -37,7 +42,7 @@ const Navbar = async () => {
             <Link href="/bucketlist" passHref>
               <Image className='navbar-logo' src={Bucket} alt={'profile'} width='30' height='30'></Image>
               </Link>
-              <Link href="/profile" passHref>
+              <Link href={session && session.user ? "/account/" + session.user.id : '/login'} passHref>
               <Image className='navbar-logo' src={Friends} alt={'profile'} width='30' height='30'></Image>
               </Link>
 

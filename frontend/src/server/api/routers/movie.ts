@@ -12,7 +12,7 @@ import { movieProductions, movies } from '~/server/db/schema';
 //** movie route */
 export const movieRouter = createTRPCRouter({
   // defines purpose, protected = requires login
-  byId: protectedProcedure
+  byId: publicProcedure
     // validates input
     .input(z.number())
     // sets up query with context and input
@@ -32,7 +32,7 @@ export const movieRouter = createTRPCRouter({
       })
     }),
 
-  getAll: protectedProcedure.query(({ ctx }) => {
+  getAll: publicProcedure.query(({ ctx }) => {
     return ctx.db.query.movies.findMany();
   }),
 

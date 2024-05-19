@@ -1,3 +1,4 @@
+'use client';
 import "~/styles/globals.css";
 
 
@@ -9,6 +10,7 @@ import Navbar from "./_components/navbar/navbar";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { SessionProvider } from "next-auth/react";
+import CssBaseline from "@mui/material/CssBaseline";
 
 export default function RootLayout({
   children,
@@ -18,14 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
     <AppRouterCacheProvider>
-      <body>
-      <TRPCReactProvider>
-        <ThemeProvider theme={theme}>
-        {children}
-        </ThemeProvider>
+        <TRPCReactProvider>
+          <SessionProvider>
+            <ThemeProvider theme={theme}>
+              <body className={GeistSans.className}>
+              <CssBaseline />
+              <Navbar></Navbar>
+              {children}
+              </body>
+            </ThemeProvider>
+          </SessionProvider>
         </TRPCReactProvider>
-
-      </body>
     </AppRouterCacheProvider>
     </html>
   );

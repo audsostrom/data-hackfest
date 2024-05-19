@@ -15,18 +15,12 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
   console.log(session);
   if (!session) {
-    redirect('/login');
+    redirect('/');
   }
-
-  /** testing flask */
-  // const response = await fetch("http://127.0.0.1:5000/data");
-  // const result = await response.json();
-  // console.log(result)
 
 
   return (
     <>
-            <Navbar></Navbar>
             <div className='home-container'>
       {
 
