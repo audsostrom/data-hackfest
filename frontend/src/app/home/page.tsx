@@ -20,7 +20,6 @@ export default async function Home() {
 
   return (
     <>
-            <Navbar></Navbar>
             <div className='home-container'>
       {
 

@@ -9,8 +9,8 @@ import ProfileCard from "~/app/_components/profile-card";
 import {notFound} from "next/navigation";
 import AccountLoading from "~/app/account/[id]/loading";
 import {Movie} from "~/server/db/schema";
-import {SelectMovie} from "~/app/_components/select-movie";
 import MovieCard from "~/app/_components/MovieCard";
+import Button from "@mui/material/Button";
 
 interface AccountPageProps {
     params: { id: string };
@@ -84,6 +84,18 @@ export default function Account({ params }: AccountPageProps) {
                           Your Profile
                       </Typography>
 
+                      <Box sx={{
+                          gap: '1rem'
+                      }}>
+                          <Typography variant={'body2'}>You're subscribed to</Typography>
+                          <Box>
+                              <Button variant={'contained'}>Netflix</Button>
+                              <Button variant={'contained'}>Netflix</Button>
+                              <Button variant={'contained'}>Netflix</Button>
+                              <Button variant={'contained'}>Netflix</Button>
+                          </Box>
+                      </Box>
+
                       <Typography component={'h2'} variant={'h6'} sx={{
                           fontWeight: 700,
                       }}>
@@ -95,7 +107,7 @@ export default function Account({ params }: AccountPageProps) {
                       }}>
                           {movies.map((movie: Movie) => (
                               <Grid item key={movie.id} xs={16} md={4}>
-                                  <MovieCard movie={movie} />
+                                  <MovieCard movie={movie}/>
                               </Grid>
                           ))}
                       </Grid>
@@ -116,7 +128,7 @@ export default function Account({ params }: AccountPageProps) {
               }}>
                   <Box sx={boxStyle}>
                       <Typography component={'h2'} variant={'h5'}>
-                          Friend Requests
+                      Friend Requests
                       </Typography>
                   </Box>
               </Grid>

@@ -25,6 +25,7 @@ export default function RootLayout({
             <ThemeProvider theme={theme}>
               <body className={GeistSans.className}>
               <CssBaseline />
+              <Navbar></Navbar>
               {children}
               </body>
             </ThemeProvider>
