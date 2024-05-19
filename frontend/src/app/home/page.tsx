@@ -67,10 +67,10 @@ export default async function Home() {
         <div className='friend-activity'>
           <div className='all-about-you'>Friend Activity</div>
           <ol className='activity-section'>
-            <li>Riley watched to Kill a MockingBird</li>
-            <li>Riley watched to Kill a MockingBird</li>
-            <li>Riley watched to Kill a MockingBird</li>
-            <li>Riley watched to Kill a MockingBird</li>
+            <li>Riley watched To Kill A Mockingbird</li>
+            <li>Riley watched The Mario Movie</li>
+            <li>Riley rated The Mario Movie</li>
+            <li>Riley added The Mario Movie to her bucket list</li>
           </ol>
         </div>
       </div>
@@ -104,16 +104,14 @@ export default async function Home() {
         <div className='all-about-you-subheader'>You're subscribed to</div>
         <div className='streaming'>
           <div className='streaming-button'>Netflix</div>
-          <div className='streaming-button'>Netflix</div>
-          <div className='streaming-button'>Netflix</div>
-          <div className='streaming-button'>Netflix</div>
+          <div className='streaming-button'>Hulu</div>
+          <div className='streaming-button'>Paramount+</div>
+          <div className='streaming-button'>Max</div>
         </div>
         <div className='all-about-you-subheader'>You love these genres</div>
-        <div>Scary, comedy, drama, romance, cartoons</div>
-        <div className='bottom-right-side'>
-        <div className='all-about-you'>Latest Reviews</div>
+        <div style={{marginBottom: 20}}>Scary, comedy, drama, romance, cartoons</div>
+        <div style={{marginBottom: 0}} className='all-about-you-subheader'>Latest Reviews</div>
         <ListReviews />
-      </div>
    
       </div>
 

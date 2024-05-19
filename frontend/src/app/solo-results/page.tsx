@@ -25,7 +25,7 @@ export default async function Results() {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({user_id: 42, query: 'Horror films with vampires'})
+    body: JSON.stringify({user_id: 42, query: 'Action film with drama and intense fighting with a serious plot'})
   });
   const result = await response.json();
 
