@@ -8,6 +8,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '~/server/auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import { ListReviews } from '../_components/list-reviews';
 
 
 export default async function Home() {
@@ -18,9 +19,9 @@ export default async function Home() {
   }
 
   /** testing flask */
-  const response = await fetch("http://127.0.0.1:5000/data");
-  const result = await response.json();
-  console.log(result)
+  // const response = await fetch("http://127.0.0.1:5000/data");
+  // const result = await response.json();
+  // console.log(result)
 
 
   return (
@@ -109,8 +110,14 @@ export default async function Home() {
         </div>
         <div className='all-about-you-subheader'>You love these genres</div>
         <div>Scary, comedy, drama, romance, cartoons</div>
-
+        <div className='bottom-right-side'>
+        <div className='all-about-you'>Latest Reviews</div>
+        <ListReviews />
       </div>
+   
+      </div>
+
+ 
 
     </div>
     

@@ -1,4 +1,4 @@
-main {
+/* main {
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: auto;
@@ -6,7 +6,7 @@ main {
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
-}
+} */
 
 @keyframes gradient {
   0% {

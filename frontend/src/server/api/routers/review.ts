@@ -26,9 +26,12 @@ export const reviewRouter = createTRPCRouter({
   getXLatest: publicProcedure
   .input(z.number())
   .query(({ ctx, input }) => { 
-    return ctx.db.query.posts.findMany({
-      orderBy: (posts, { desc }) => [desc(posts.createdAt)],
+    return ctx.db.query.reviews.findMany({
+      orderBy: (reviews, { desc }) => [desc(reviews.id)],
       limit: input,
+      with:{
+        movie: true,
+      }
     });
   }),
 

@@ -194,6 +194,8 @@ export const reviews = createTable(
     rating: doublePrecision("rating").notNull(),
   },
 );
+export type Review = typeof reviews.$inferSelect;
+export type NewReview = typeof reviews.$inferInsert;
 
 export const reviewsRelations = relations(reviews, ({ one }) => ( {
   movie: one(movies, {
