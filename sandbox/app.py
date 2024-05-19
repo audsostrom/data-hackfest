@@ -1,3 +1,4 @@
+
 import io
 import json
 import os
@@ -11,9 +12,52 @@ from transformers import AutoTokenizer, AutoModel
 import torch.nn as nn
 import numpy as np
 from annoy import AnnoyIndex
+import re
+# Import flask and datetime module for showing date and time
+import google.generativeai as genai
+from flask_cors import CORS
+import datetime
 
-# Flask app initialization
+# Initializing flask app
 app = Flask(__name__)
+CORS(app)
+
+api_key = 'AIzaSyC8WizRY4zsJsqxpC1S9bUZY25yqoZEuOk'
+genai.configure(api_key=api_key)
+
+def extract_json(text_response):
+    # This pattern matches a string that starts with '{' and ends with '}'
+    pattern = r'\{[^{}]*\}'
+    matches = re.finditer(pattern, text_response)
+    json_objects = []
+    for match in matches:
+        json_str = match.group(0)
+        print(json_str)
+        try:
+            # Validate if the extracted string is valid JSON
+            json_obj = json.loads(json_str)
+            json_objects.append(json_obj)
+        except json.JSONDecodeError:
+            # Extend the search for nested structures
+            extended_json_str = extend_search(text_response, match.span())
+            json_obj = json.loads(extended_json_str)
+            json_objects.append(json_obj)
+    if json_objects:
+        return json_objects
+    else:
+        return None  # Or handle this case as you prefer
+def extend_search(text, span):
+    # Extend the search to try to capture nested structures
+    start, end = span
+    nest_count = 0
+    for i in range(start, len(text)):
+        if text[i] == '{':
+            nest_count += 1
+        elif text[i] == '}':
+            nest_count -= 1
+            if nest_count == 0:
+                return text[start:i+1]
+    return text[start:end]
 
 # Define the Recommender Network (same as your previous definition)
 class RecommenderNet(nn.Module):
@@ -38,7 +82,7 @@ class personalisedSearcher:
     def __init__(self):
         self.movies = pd.read_csv("data/grouplens/ml-25m/movies.csv")
         self.ratings = pd.read_csv("data/grouplens/ml-25m/filtered_ratings.csv")
-        self.embeddings = pd.read_csv("embeddings/data.csv", index_col=0)
+        self.embeddings = pd.read_csv("data/embeddings/data.csv", index_col=0)
         self.item_tensor = torch.tensor(self.embeddings.values, dtype=torch.float32)
 
         # Initialize Annoy Index
@@ -181,9 +225,50 @@ def recommend_movies():
         else:
             return jsonify({'error': 'Please provide user_id and query'}), 400
 
+ 
+x = datetime.datetime.now()
+
+@app.route("/getmovieinfo", methods=["POST"])
+def prompt():
+    print()
+    data = request.json
+    print(data)
+    title = data.get("title", "")
+
+
+    if not title:
+        return jsonify({"error": "Prompt is required"}), 400
+
+    try:
+        model = genai.GenerativeModel("gemini-pro")
+        prompt = """Can you get a URL of an images for the films Vampires (1998) and Pandorum (2009)
+                    """
+
+        response = model.generate_content(prompt)
+
+        return jsonify({"response": response.text})
+    except Exception as e:
+        return jsonify({"error": e}), 500
+ 
+ 
+# This is just for me to see if it works lol
+@app.route('/data')
+def dummy():
+    print('hi')
+    return {
+        'Name':"geek", 
+        "Age":"22",
+        "Date":x, 
+        "programming":"python"
+    }
+
 
 # curl -X POST http://127.0.0.1:5000/recommend -H "Content-Type: application/json" -d "{\"user_id\": 42, \"query\": \"Horror films with zombies\"}"
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
+
+import json
+import re
+

@@ -34,6 +34,8 @@
     "postgres": "^3.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-spinners": "^0.13.8",
+    "react-simple-star-rating": "^5.1.7",
     "server-only": "^0.0.1",
     "superjson": "^2.2.1",
     "tls": "^0.0.1",
