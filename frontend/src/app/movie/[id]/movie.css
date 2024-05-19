@@ -1,0 +1,11 @@
+.movie-container {
+  background-color: #141D26;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  min-height: calc(100vh - 60px);
+  height: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+

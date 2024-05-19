@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { eq } from 'drizzle-orm';
+import { ilike } from "drizzle-orm";
 
 import {
   createTRPCRouter,
@@ -34,4 +35,10 @@ export const movieRouter = createTRPCRouter({
   getAll: protectedProcedure.query(({ ctx }) => {
     return ctx.db.query.movies.findMany();
   }),
+
+  searchFor: publicProcedure
+  .input(z.string())
+  .query(({ctx, input}) =>{
+    return ctx.db.select().from(movies).where(ilike(movies.title, "%" + input + "%")).limit(10);
+  })
 });
