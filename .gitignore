@@ -12,3 +12,4 @@ sandbox/embeddings/title_genre.csv
 sandbox/embeddings/tagline_genres_subgenres_themes.csv
 /sandbox/wandb
 /sandbox/wandb
+/sandbox/embeddings

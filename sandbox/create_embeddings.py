@@ -2,7 +2,7 @@ import ast
 import sys
 
 import pandas as pd
-from transformers import AutoTokenizer, AutoModel
+from transformers import AutoTokenizer, AutoModel, AutoModelForSeq2SeqLM
 import torch
 import re
 import numpy as np
@@ -23,8 +23,12 @@ pd.set_option('display.max_rows', 100)
 # If you also want to expand the width of each column to avoid truncation of data
 pd.set_option('display.max_colwidth', None)
 
-tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/LaBSE")
-model = AutoModel.from_pretrained("sentence-transformers/LaBSE")
+# tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/LaBSE")
+# model = AutoModel.from_pretrained("sentence-transformers/LaBSE")
+# tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+# model = AutoModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/paraphrase-distilroberta-base-v2")
+model = AutoModel.from_pretrained("sentence-transformers/paraphrase-distilroberta-base-v2")
 data = pd.read_csv("clean_data.csv")
 data = data.dropna(subset=['kaggle_tagline', 'grouplens_movieId'])
 # missing_data = data.isnull().mean() * 100
@@ -95,13 +99,8 @@ data['clean_webeaver_kaggle_themes'] = data['webeaver_kaggle_themes'].apply(clea
 #     data['clean_webeaver_allmovie_themes'],
 #     data['clean_webeaver_kaggle_themes']
 # ], sep=' ', na_rep='')
-data['input_text'] = data['clean_kaggle_tagline'].str.cat([
-    data['clean_kaggle_genres'],
-    data['clean_allmovie_details_genres'],
-    data['clean_allmovie_details_sub-genres'],
-    data['clean_allmovie_themes'],
-    data['clean_webeaver_allmovie_themes'],
-    data['clean_webeaver_kaggle_themes']
+data['input_text'] = data['clean_allmovie_synopsis'].str.cat([
+        data['clean_kaggle_overview']
 ], sep=' ', na_rep='')
 data['input_text'] = data['input_text'].apply(clean_text)
 
