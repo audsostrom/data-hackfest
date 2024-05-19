@@ -7,6 +7,7 @@ import {
   publicProcedure,
 } from '~/server/api/trpc';
 import { movieProductions, movies } from '~/server/db/schema';
+import { datetime } from 'drizzle-orm/mysql-core';
 
 //** movie route */
 export const movieRouter = createTRPCRouter({
@@ -31,6 +32,23 @@ export const movieRouter = createTRPCRouter({
       })
     }),
 
+  add: protectedProcedure
+  .input(z.object({id: z.number(), title: z.string(), genres: z.string()}))
+  .mutation(async ({ ctx, input }) => {
+    
+    await ctx.db.insert(movies).values({
+      id: input.id,
+      title: input.title,
+      genres: input.genres,
+      length: 0,
+      release_dt: new Date(),
+      synopsis: "",
+      vote_avg: 0,
+      vote_count: 0,
+      lang: "en",
+      mpaa_rating: "PG",
+    });
+  }),
   getAll: protectedProcedure.query(({ ctx }) => {
     return ctx.db.query.movies.findMany();
   }),
