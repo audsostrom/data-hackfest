@@ -69,7 +69,7 @@ def train():
     min_rating = df['rating'].min()
     max_rating = df['rating'].max()
     df['rating'] = df['rating'].apply(lambda x: (x - min_rating) / (max_rating - min_rating))
-    msk = np.random.rand(len(df)) < 0.9
+    msk = np.random.rand(len(df)) < 0.8
     train_df = df[msk]
     val_df = df[~msk]
 
@@ -137,14 +137,14 @@ def sweep():
         "method": "random",
         "metric": {"name": "batch_loss", "goal": "minimize"},
         "parameters": {
-            "learning_rate": {"distribution": "log_uniform_values", "min": 0.00025, "max": 0.00050},
-            "epochs": {"distribution": "q_uniform", "min": 5, "max": 10, "q": 1},
-            "batch_size": {"values": [512, 1024, 2048, 4096, 8192]},
-            "embedding_size": {"values": [64, 128, 256, 512, 1024]}
+            "learning_rate": {"distribution": "log_uniform_values", "min": 0.00025, "max": 0.00040},
+            "epochs": {"values": [4, 5, 6]},
+            "batch_size": {"values": [2048, 4096, 8192]},
+            "embedding_size": {"values": [512, 1024]}
         }
     }
     sweep_id = wandb.sweep(sweep_config, project=f"2024-DataHackfest")
-    wandb.agent(sweep_id, function=train, count=5)
+    wandb.agent(sweep_id, function=train, count=10)
 
 
 def run_single_experiment():

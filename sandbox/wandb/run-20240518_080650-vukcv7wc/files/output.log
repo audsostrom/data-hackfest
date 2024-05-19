@@ -32,3 +32,44 @@ Epoch 4, Batch 0, Loss: 0.5339232683181763
 Epoch 4, Batch 500, Loss: 0.5355327725410461
 Epoch 4, Batch 1000, Loss: 0.538703978061676
 Epoch 4, Batch 1500, Loss: 0.5355883836746216
+Epoch 4, Batch 2000, Loss: 0.5348424911499023
+Epoch 4, Batch 2500, Loss: 0.5340549945831299
+Epoch 4, Training Loss: 0.5364347442657776
+Epoch 4, Validation Loss: 0.5655157811501447. Epoch Duration: 6.49 minutes
+Starting Epoch 5
+Epoch 5, Batch 0, Loss: 0.5219323635101318
+Epoch 5, Batch 500, Loss: 0.5259091854095459
+Epoch 5, Batch 1000, Loss: 0.5198307037353516
+Epoch 5, Batch 1500, Loss: 0.522101640701294
+Epoch 5, Batch 2000, Loss: 0.5230014324188232
+Epoch 5, Batch 2500, Loss: 0.5219131708145142
+Epoch 5, Training Loss: 0.5205318868366651
+Epoch 5, Validation Loss: 0.5675681524210735. Epoch Duration: 6.47 minutes
+Starting Epoch 6
+Epoch 6, Batch 0, Loss: 0.5139353275299072
+Epoch 6, Batch 500, Loss: 0.5090153217315674
+Epoch 6, Batch 1000, Loss: 0.5100194215774536
+Epoch 6, Batch 1500, Loss: 0.508580207824707
+Epoch 6, Batch 2000, Loss: 0.5093536376953125
+Epoch 6, Batch 2500, Loss: 0.5093408823013306
+Epoch 6, Training Loss: 0.5095984978417151
+Epoch 6, Validation Loss: 0.5705869331904349. Epoch Duration: 6.39 minutes
+Starting Epoch 7
+Epoch 7, Batch 0, Loss: 0.49991539120674133
+Epoch 7, Batch 500, Loss: 0.5005067586898804
+Epoch 7, Batch 1000, Loss: 0.5036436319351196
+Epoch 7, Batch 1500, Loss: 0.5044453144073486
+Epoch 7, Batch 2000, Loss: 0.5011560916900635
+Epoch 7, Batch 2500, Loss: 0.502455472946167
+Epoch 7, Training Loss: 0.5025642033768141
+Epoch 7, Validation Loss: 0.5738028370385352. Epoch Duration: 6.41 minutes
+Starting Epoch 8
+Epoch 8, Batch 0, Loss: 0.5044668316841125
+Epoch 8, Batch 500, Loss: 0.495482861995697
+Epoch 8, Batch 1000, Loss: 0.4953847825527191
+Epoch 8, Batch 1500, Loss: 0.4966718554496765
+Epoch 8, Batch 2000, Loss: 0.5011211633682251
+Epoch 8, Batch 2500, Loss: 0.5034863948822021
+Epoch 8, Training Loss: 0.49787213148498316
+Epoch 8, Validation Loss: 0.5771070749701925. Epoch Duration: 6.45 minutes
+Total training time (minutes): 51.79 minutes

@@ -26,3 +26,10 @@ config: {}
 2024-05-18 08:06:50,893 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_redirect():2294] Wrapping output streams.
 2024-05-18 08:06:50,893 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_redirect():2319] Redirects installed.
 2024-05-18 08:06:50,894 INFO    Thread-10 (_run_job):28276 [wandb_init.py:init():838] run started, returning control to user process
+2024-05-18 08:58:36,318 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_finish():2103] finishing run davmantor/2024-DataHackfest/vukcv7wc
+2024-05-18 08:58:36,318 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_atexit_cleanup():2343] got exitcode: 0
+2024-05-18 08:58:36,318 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_restore():2326] restore
+2024-05-18 08:58:36,318 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_restore():2332] restore done
+2024-05-18 08:58:41,247 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-05-18 08:58:41,247 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-05-18 08:58:41,251 INFO    Thread-10 (_run_job):28276 [wandb_run.py:_footer_sync_info():3953] logging synced files

@@ -10,3 +10,5 @@ sandbox/medium_article/CF/CF.pth
 sandbox/medium_article/embeddings/data.csv
 sandbox/embeddings/title_genre.csv
 sandbox/embeddings/tagline_genres_subgenres_themes.csv
+/sandbox/wandb
+/sandbox/wandb
