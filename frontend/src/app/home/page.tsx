@@ -77,7 +77,7 @@ export default async function Home() {
         <div className='middle-title'>Find Your Next Movie</div>
         <div className='middle-question'>Are you watching by yourself?</div>
         <div className='question-row'>
-          <Link href='solo-quiz'>
+          <Link href='solo-results'>
             <div>Pick for me!</div>
           
           </Link>

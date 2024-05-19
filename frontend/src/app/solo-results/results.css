@@ -1,0 +1,22 @@
+.results-container, .loading-container {
+   background-color: #141D26;
+   color: white;
+   display: flex;
+   padding: 20px 50px;
+   min-height: calc(100vh - 60px);
+   height: 100%;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.loading-container {
+   justify-content: center;
+   flex-direction: column;
+}
+
+.section-header {
+   color: #FFF;
+   font-size: 40px;
+   font-style: italic;
+   font-weight: 500;
+}
